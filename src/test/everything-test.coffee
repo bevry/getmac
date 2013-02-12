@@ -11,6 +11,7 @@ joe.describe 'getmac', (describe,it) ->
 			expect(err).to.be.null
 			expect(macAddress).to.be.string
 			expect(isMac macAddress).to.be.true
+			console.log('Got:', macAddress)
 
 	it 'validates mac correctly', ->
 		expect(isMac 'e4:ce:8f:5b:a7:fe').to.be.true
