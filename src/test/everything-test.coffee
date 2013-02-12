@@ -6,13 +6,14 @@ joe = require('joe')
 
 # Test
 joe.describe 'getmac', (describe,it) ->
-	it 'got the mac address successfully', ->
+	it 'got the mac address successfully', (done) ->
 		getMac (err,macAddress) ->
-			console.log(err,err.stack)  if err
+			return done(err)  if err
 			expect(err).to.be.null
 			expect(macAddress).to.be.string
 			expect(isMac macAddress).to.be.true
 			console.log('Got:', macAddress)
+			return done()
 
 	it 'validates mac correctly', ->
 		expect(isMac 'e4:ce:8f:5b:a7:fe').to.be.true
