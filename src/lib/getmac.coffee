@@ -18,10 +18,10 @@ getBigMac = getMac = (next) ->
 
 	# Unix
 	else
-		command = "ifconfig | grep -o -E '([[:xdigit:]]{1,2}:){5}[[:xdigit:]]{1,2}'"
+		command = "ifconfig"
 		exec command, (err,stdout,stderr) ->
 			return next(err)  if err
-			macAddress = stdout.split('\n')[0]
+			macAddress = stdout.match(macRegex)[0]
 			return next(null,macAddress)
 
 # Is Mac
