@@ -9,7 +9,7 @@ macRegex = /(?:[a-z0-9]{1,2}[:\-]){5}[a-z0-9]{1,2}/i
 # next(err,macAddress)
 getBigMac = getMac = (next) ->
 	# Windows
-	if process.platform.indexOf('win') is 0
+	if isWindows
 		command = "getmac"
 		exec command, (err,stdout,stderr) ->
 			return next(err)  if err

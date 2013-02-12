@@ -1,5 +1,8 @@
 ## History
 
+- v1.0.3 February 12, 2011
+	- Minor optimisation
+
 - v1.0.2 February 12, 2011
 	- Fixed windows support, turns out they format mac addresses differently
 
