@@ -8,6 +8,7 @@ joe = require('joe')
 joe.describe 'getmac', (describe,it) ->
 	it 'got the mac address successfully', ->
 		getMac (err,macAddress) ->
+			console.log(err,err.stack)  if err
 			expect(err).to.be.null
 			expect(macAddress).to.be.string
 			expect(isMac macAddress).to.be.true
