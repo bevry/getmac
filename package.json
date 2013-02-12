@@ -1,6 +1,6 @@
 {
 	"name": "getmac",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Get the mac address of the current machine you are on",
 	"homepage": "https://github.com/bevry/getmac",
 	"keywords": [
@@ -37,7 +37,7 @@
 		"lib": "./out/lib"
 	},
 	"bin": {
-		"getmac": "./bin/getmac"
+		"getmac-node": "./bin/getmac-node"
 	},
 	"scripts": {
 		"test": "node ./out/test/everything-test.js --joe-reporter=list"

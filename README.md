@@ -6,7 +6,7 @@ Get the mac address of the current machine you are on.
 
 1. [Install Node.js](http://bevry.me/node/install)
 1. Install it locally via: `npm install getmac`
-1. Try it globally with: `npm install -g getmac; getmac`
+1. Try it globally with: `npm install -g getmac` and  `getmac-node`
 
 ## Usage
 
