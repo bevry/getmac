@@ -1,0 +1,46 @@
+{
+	"name": "getmac",
+	"version": "1.0.0",
+	"description": "Get the mac address of the current machine you are on",
+	"homepage": "https://github.com/bevry/getmac",
+	"keywords": [
+		"mac",
+		"mac-address",
+		"ifconfig",
+		"ipconfig",
+		"getmac"
+	],
+	"author": "Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
+	"maintainers": [
+		"Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
+	],
+	"contributors": [
+		"Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
+	],
+	"bugs": {
+		"url": "https://github.com/bevry/getmac/issues"
+	},
+	"repository" : {
+		"type": "git",
+		"url": "https://github.com/bevry/getmac.git"
+	},
+	"engines" : {
+		"node": ">=0.4"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"coffee-script": "~1.4.0",
+		"chai": "~1.5.0",
+		"joe": "~1.1.1"
+	},
+	"directories": {
+		"lib": "./out/lib"
+	},
+	"bin": {
+		"getmac": "./bin/getmac"
+	},
+	"scripts": {
+		"test": "node ./out/test/everything-test.js --joe-reporter=list"
+	},
+	"main": "./out/lib/getmac"
+}
