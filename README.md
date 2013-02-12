@@ -1,4 +1,4 @@
-# getmac for node.js
+# getmac for node.js [![Build Status](https://secure.travis-ci.org/bevry/getmac.png?branch=master)](http://travis-ci.org/bevry/getmac)
 
 Get the mac address of the current machine you are on.
 
