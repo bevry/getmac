@@ -9,7 +9,7 @@ node_js:
   - 0.9
 notifications:
   irc:
-    - "irc.freenode.org#bevry"
+    - "irc.freenode.org#bevry-dev"
   email:
     recipients:
-      - query-engine@bevry.me
+      - travis@bevry.me
