@@ -21,6 +21,7 @@ getBigMac = getMac = (next) ->
 		command = "ifconfig"
 		exec command, (err,stdout,stderr) ->
 			return next(err)  if err
+			console.log stdout
 			macAddress = stdout.match(macRegex)[0]
 			return next(null,macAddress)
 
