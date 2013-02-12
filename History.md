@@ -1,5 +1,8 @@
 ## History
 
+- v1.0.4 February 12, 2011
+	- Better compatibility with linux distros
+
 - v1.0.3 February 12, 2011
 	- Minor optimisation
 
