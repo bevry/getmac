@@ -44,8 +44,11 @@ joe.describe 'getmac', (describe,it) ->
 		  RX bytes:230580 (225.1 KiB)  TX bytes:230580 (225.1 KiB)
 		  """
 
-		it 'got the default mac address successfully', (done) ->
-			getMac {data}, (err, macAddress) ->
+		it 'got the eth0 mac address successfully', (done) ->
+			opts =
+				data: data
+				interface: 'eth0'
+			getMac opts, (err, macAddress) ->
 				return done(err)  if err
 				expect(err).to.be.null
 				expect(macAddress).to.eql('00:18:31:8A:41:C6')
@@ -87,8 +90,6 @@ joe.describe 'getmac', (describe,it) ->
 			getMac (err, macAddress) ->
 				return done(err)  if err
 				expect(err).to.be.null
-				expect(macAddress).to.not.equal('00-00-00-00-00-00')
-				expect(macAddress).to.not.equal('00:00:00:00:00:00')
 				expect(macAddress).to.be.string
 				expect(isMac macAddress).to.be.true
 				return done()
