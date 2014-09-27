@@ -46,9 +46,9 @@ joe.describe 'getmac', (describe,it) ->
 
 		it 'got the eth0 mac address successfully', (done) ->
 			opts =
+				os: 'unix'
 				data: data
 				interface: 'eth0'
-				forceUnix: true
 			getMac opts, (err, macAddress) ->
 				return done(err)  if err
 				expect(err).to.be.null
@@ -80,29 +80,27 @@ joe.describe 'getmac', (describe,it) ->
 		  """
 
 		it 'got the default mac address successfully', (done) ->
-			opts =
-				data: data
-				forceUnix: true
-			getMac opts, (err, macAddress) ->
+			os = 'unix'
+			getMac {data, os}, (err, macAddress) ->
 				return done(err)  if err
 				expect(err).to.be.null
 				expect(macAddress).to.eql('b8:8d:12:07:6b:ac')
 				return done()
 
-	describe 'preset ifconfig', (describe,it) ->
+	describe 'preset getmac', (describe,it) ->
 		data = """
 			Physical Address    Transport Name
 			=================== ==========================================================
-			2C-3F-45-02-1B-32   \Device\Tcpip_{7E49B486-120A-4BC2-2114-B345A4D5C5}
+			2C-3F-45-02-1B-32   \\Device\\Tcpip_{7E49B486-120A-4BC2-2114-B345A4D5C5}
 			10-13-17-BC-12-48   Media disconnected
-			22-B3-C5-30-76-78   \Device\Tcpip_{213E8D2A-1DBE-4240-8301-BE6F3EACAF9D}
-			00-05-2A-3C-78-00   \Device\Tcpip_{F01E3FC2-A5A1-6940-D1A1-C7521AEC4296}
+			22-B3-C5-30-76-78   \\Device\\Tcpip_{213E8D2A-1DBE-4240-8301-BE6F3EACAF9D}
+			00-05-2A-3C-78-00   \\Device\\Tcpip_{F01E3FC2-A5A1-6940-D1A1-C7521AEC4296}
 			2C-23-45-14-23-AD   Media disconnected
 		  """
 
 		it 'got the default Windows mac address successfully', (done) ->
-			forceWindows = true
-			getMac {data, forceWindows}, (err, macAddress) ->
+			os = 'win'
+			getMac {data, os}, (err, macAddress) ->
 				return done(err)  if err
 				expect(err).to.be.null
 				expect(macAddress).to.eql('2c:3f:45:02:1b:32')

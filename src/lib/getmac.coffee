@@ -3,7 +3,6 @@
 {extractOpts} = require('extract-opts')
 
 # Prepare
-isWindows = process.platform.indexOf('win') is 0
 winRegex = /((?:[a-f0-9]{2}[:\-]){5}[a-f0-9]{2})\s+(\S+)/ig
 theRegex = /^(\S+)?\s+.*\s+((?:[a-f0-9]{2}[:\-]){5}[a-f0-9]{2})/ig
 macRegex = /(?:[a-f0-9]{2}[:\-]){5}[a-f0-9]{2}/ig
@@ -13,12 +12,11 @@ macRegex = /(?:[a-f0-9]{2}[:\-]){5}[a-f0-9]{2}/ig
 getMac = (opts, next) ->
 	# Prepare
 	[opts, next] = extractOpts(opts, next)
-	{data} = opts
 	iface = opts.interface
-	if opts.forceWindows
-		isWindows = true
-	if opts.forceUnix
-		isWindows = false
+	isWindows = process.platform.indexOf('win') is 0
+	if opts.os
+		isWindows = opts.os is 'win'
+	{data} = opts
 	data ?= null
 
 	# Command
@@ -30,7 +28,6 @@ getMac = (opts, next) ->
 		macs = {}
 		firstMac = null
 
-		
 		d = data.split("\n")
 		# Find a valid mac address
 		if /^\S+:/.exec(data[0])
