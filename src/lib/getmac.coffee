@@ -3,15 +3,19 @@
 {extractOpts} = require('extract-opts')
 
 # Prepare
-isWindows = process.platform.indexOf('win') is 0
-macRegex = /(?:[a-z0-9]{2}[:\-]){5}[a-z0-9]{2}/ig
-zeroRegex = /(?:[0]{2}[:\-]){5}[0]{2}/
+winRegex = /((?:[a-f0-9]{2}[:\-]){5}[a-f0-9]{2})\s+(\S+)/ig
+theRegex = /^(\S+)?\s+.*\s+((?:[a-f0-9]{2}[:\-]){5}[a-f0-9]{2})/ig
+macRegex = /(?:[a-f0-9]{2}[:\-]){5}[a-f0-9]{2}/ig
 
 # Get Mac
 # next(err,macAddress)
 getMac = (opts, next) ->
 	# Prepare
 	[opts, next] = extractOpts(opts, next)
+	iface = opts.interface
+	isWindows = process.platform.indexOf('win') is 0
+	if opts.os
+		isWindows = opts.os is 'win'
 	{data} = opts
 	data ?= null
 
@@ -21,22 +25,51 @@ getMac = (opts, next) ->
 	# Extract Mac
 	extractMac = (data, next) ->
 		# Prepare
-		result = null
+		macs = {}
+		firstMac = null
 
+		d = data.split("\n")
 		# Find a valid mac address
-		while match = macRegex.exec(data)
-			macAddress = match[0]
-			isZero = zeroRegex.test(macAddress)
-			if isZero is false
-				result ?= macAddress
+		if /^\S+:/.exec(data[0])
+			while d.length
+				line = d.shift()
+				name = /^\S+:/.exec(line)
+				if name
+					line = d.shift()
+					result = macRegex.exec(line)
+					if result
+						mac = macs[name] = result[0].toLowerCase()
+						if not firstMac
+							firstMac = macs
+		else
+			while d.length
+				line = d.shift()
+				if isWindows
+					match = winRegex.exec(line)
+					if match
+						mac = match[1].split(/[:\-]/).join(':').toLowerCase()
+						macs[match[2]] = mac
+						if not firstMac
+							firstMac = mac
+				else
+					match = theRegex.exec(line)
+					if match
+						mac = match[2].split(/[:\-]/).join(':').toLowerCase()
+						macs[match[1]] = mac
+						if not firstMac
+							firstMac = mac
+			#macAddress = match[0]
 
 		# We have no mac address so return an error
-		if result is null
+		if not firstMac
 			err = new Error('could not determine the mac address from:\n'+data)
 			return next(err)
 
 		# Forward with result
-		return next(null, result)
+		if not iface
+			return next(null, firstMac)
+		else
+			return next(null, macs[iface])
 
 	# If we already have data go straight to extracting the mac
 	if data
