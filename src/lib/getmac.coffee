@@ -15,6 +15,10 @@ getMac = (opts, next) ->
 	[opts, next] = extractOpts(opts, next)
 	{data} = opts
 	iface = opts.interface
+	if opts.forceWindows
+		isWindows = true
+	if opts.forceUnix
+		isWindows = false
 	data ?= null
 
 	# Command
@@ -24,42 +28,49 @@ getMac = (opts, next) ->
 	extractMac = (data, next) ->
 		# Prepare
 		macs = {}
+		firstMac = null
 
-		data = data.split("\n")
+		
+		d = data.split("\n")
 		# Find a valid mac address
 		if /^\S+:/.exec(data[0])
-			while data.length
-				line = data.shift()
+			while d.length
+				line = d.shift()
 				name = /^\S+:/.exec(line)
 				if name
-					line = data.shift()
+					line = d.shift()
 					result = macRegex.exec(line)
 					if result
-						macs[name] = result[0]
+						mac = macs[name] = result[0].toLowerCase()
+						if not firstMac
+							firstMac = macs
 		else
-			while data.length
-				line = data.shift()
+			while d.length
+				line = d.shift()
 				if isWindows
 					match = winRegex.exec(line)
 					if match
-						mac = match[1].split(/[:\-]/).join(':')
+						mac = match[1].split(/[:\-]/).join(':').toLowerCase()
 						macs[match[2]] = mac
+						if not firstMac
+							firstMac = mac
 				else
 					match = theRegex.exec(line)
 					if match
-						mac = match[2].split(/[:\-]/).join(':')
+						mac = match[2].split(/[:\-]/).join(':').toLowerCase()
 						macs[match[1]] = mac
+						if not firstMac
+							firstMac = mac
 			#macAddress = match[0]
 
 		# We have no mac address so return an error
-		keys = Object.keys(macs)
-		if keys.length is 0
+		if not firstMac
 			err = new Error('could not determine the mac address from:\n'+data)
 			return next(err)
 
 		# Forward with result
 		if not iface
-			return next(null, macs[keys[0]])
+			return next(null, firstMac)
 		else
 			return next(null, macs[iface])
 
