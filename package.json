@@ -9,9 +9,14 @@
   "badges": {
     "travis": true,
     "npm": true,
-    "gittip": "bevry",
+    "npmdownloads": true,
+    "david": true,
+    "daviddev": true,
+    "gratipay": "bevry",
     "flattr": "344188/balupton-on-Flattr",
-    "paypal": "QB8GQPZAH84N6"
+    "paypal": "QB8GQPZAH84N6",
+    "bitcoin": "https://coinbase.com/checkouts/9ef59f5479eec1d97d63382c9ebcb93a",
+    "wishlist": "http://amzn.com/w/2F8TXKSNAFG4V"
   },
   "keywords": [
     "mac",
@@ -38,14 +43,14 @@
     "node": ">=0.4"
   },
   "dependencies": {
-    "extract-opts": "~2.2.0"
+    "extract-opts": "^2.2.0"
   },
   "devDependencies": {
-    "coffee-script": "~1.6.3",
-    "chai": "~1.8.1",
-    "joe": "~1.3.0",
-    "joe-reporter-console": "~1.2.1",
-    "projectz": "~0.2.3"
+    "coffee-script": "^1.9.1",
+    "chai": "^2.1.0",
+    "joe": "^1.6.0",
+    "joe-reporter-console": "^1.2.1",
+    "projectz": "^0.5.0"
   },
   "directories": {
     "lib": "./out/lib"
@@ -56,5 +61,8 @@
   "scripts": {
     "test": "node ./out/test/everything-test.js"
   },
-  "main": "./out/lib/getmac"
+  "main": "./out/lib/getmac",
+  "cakeConfiguration": {
+    "COFFEE_SRC_PATH": "src"
+  }
 }
