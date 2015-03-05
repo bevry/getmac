@@ -1,5 +1,8 @@
 # History
 
+## v1.0.7 March 5, 2015
+- Added fix for iproute2 commands in absence of ifconfig on Linux machines
+
 ## v1.0.6 October 27, 2013
 - Re-packaged
 
