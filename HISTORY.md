@@ -1,5 +1,9 @@
 # History
 
+## v1.2.1 2016 May 10
+- Use down interfaces as well as up interfaces
+	- Thanks to [Ted Shroyer](https://github.com/tedshroyer) for [pull request #15](https://github.com/bevry/getmac/pull/15)
+
 ## v1.1.0 2016 May 10
 - Updated dependencies
 - Repackaged
