@@ -16,7 +16,7 @@ getMac = (opts, next) ->
 	data ?= null
 
 	# Command
-	command = if isWindows then "getmac" else "ifconfig || ip link"
+	command = if isWindows then "getmac" else "ifconfig -a || ip link"
 
 	# Extract Mac
 	extractMac = (data, next) ->
