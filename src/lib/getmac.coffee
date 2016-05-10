@@ -1,6 +1,6 @@
 # Import
 {exec} = require('child_process')
-{extractOpts} = require('extract-opts')
+extractOptsAndCallback = require('extract-opts')
 
 # Prepare
 isWindows = process.platform.indexOf('win') is 0
@@ -11,7 +11,7 @@ zeroRegex = /(?:[0]{2}[:\-]){5}[0]{2}/
 # next(err,macAddress)
 getMac = (opts, next) ->
 	# Prepare
-	[opts, next] = extractOpts(opts, next)
+	[opts, next] = extractOptsAndCallback(opts, next)
 	{data} = opts
 	data ?= null
 

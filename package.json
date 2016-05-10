@@ -1,23 +1,9 @@
 {
   "name": "getmac",
-  "version": "1.0.7",
+  "version": "1.1.0",
   "description": "Get the mac address of the current machine you are on",
   "homepage": "https://github.com/bevry/getmac",
-  "license": {
-    "type": "MIT"
-  },
-  "badges": {
-    "travis": true,
-    "npm": true,
-    "npmdownloads": true,
-    "david": true,
-    "daviddev": true,
-    "gratipay": "bevry",
-    "flattr": "344188/balupton-on-Flattr",
-    "paypal": "QB8GQPZAH84N6",
-    "bitcoin": "https://coinbase.com/checkouts/9ef59f5479eec1d97d63382c9ebcb93a",
-    "wishlist": "http://amzn.com/w/2F8TXKSNAFG4V"
-  },
+  "license": "MIT",
   "keywords": [
     "mac",
     "mac-address",
@@ -25,12 +11,39 @@
     "ipconfig",
     "getmac"
   ],
+  "badges": {
+    "list": [
+      "travisci",
+      "npmversion",
+      "npmdownloads",
+      "daviddm",
+      "daviddmdev",
+      "---",
+      "slackin",
+      "patreon",
+      "gratipay",
+      "flattr",
+      "paypal",
+      "bitcoin",
+      "wishlist"
+    ],
+    "config": {
+      "patreonUsername": "bevry",
+      "gratipayUsername": "bevry",
+      "flattrUsername": "balupton",
+      "paypalURL": "https://bevry.me/paypal",
+      "bitcoinURL": "https://bevry.me/bitcoin",
+      "wishlistURL": "https://bevry.me/wishlist",
+      "slackinURL": "https://slack.bevry.me"
+    }
+  },
   "author": "2013+ Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
   "maintainers": [
-    "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
+    "Benjamin Lupton <b@lupton.cc> (https://balupton.com)"
   ],
   "contributors": [
-    "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
+    "Benjamin Lupton <b@lupton.cc> (https://balupton.com)",
+    "Stephen Brown II <Stephen.Brown2@gmail.com> (https://github.com/StephenBrown2)"
   ],
   "bugs": {
     "url": "https://github.com/bevry/getmac/issues"
@@ -40,29 +53,59 @@
     "url": "https://github.com/bevry/getmac.git"
   },
   "engines": {
-    "node": ">=0.4"
+    "node": ">=0.12"
   },
-  "dependencies": {
-    "extract-opts": "^2.2.0"
-  },
-  "devDependencies": {
-    "coffee-script": "^1.9.1",
-    "chai": "^2.1.0",
-    "joe": "^1.6.0",
-    "joe-reporter-console": "^1.2.1",
-    "projectz": "^0.5.0"
-  },
-  "directories": {
-    "lib": "./out/lib"
-  },
+  "editions": [
+    {
+      "description": "Source + CoffeeScript + Require",
+      "entry": "src/lib/getmac.coffee",
+      "directory": "src",
+      "syntaxes": [
+        "coffeescript",
+        "require"
+      ]
+    },
+    {
+      "description": "CoffeeScript Compiled JavaScript + ES5 + Require",
+      "entry": "es5/lib/getmac.js",
+      "directory": "es5",
+      "syntaxes": [
+        "javascript",
+        "es5",
+        "require"
+      ]
+    }
+  ],
+  "main": "es5/lib/getmac.js",
+  "browser": "es5/lib/getmac.js",
   "bin": {
-    "getmac-node": "./bin/getmac-node"
+    "getmac-node": "bin/getmac-node"
   },
   "scripts": {
-    "test": "node ./out/test/everything-test.js"
+    "setup": "npm install",
+    "clean": "rm -Rf ./docs ./es5",
+    "compile": "npm run compile:coffeescript",
+    "compile:coffeescript": "coffee -bco ./es5 ./src",
+    "meta": "npm run meta:projectz",
+    "meta:projectz": "projectz compile",
+    "prepare": "npm run compile && npm run test && npm run meta",
+    "release": "npm run prepare && npm run release:publish && npm run release:tag && npm run release:push",
+    "release:publish": "npm publish",
+    "release:tag": "git tag v$npm_package_version -a",
+    "release:push": "git push origin master && git push origin --tags",
+    "pretest": "npm run test:coffeelint",
+    "test:coffeelint": "coffeelint ./src",
+    "test": "node --harmony ./es5/test/everything-test.js"
   },
-  "main": "./out/lib/getmac",
-  "cakeConfiguration": {
-    "COFFEE_SRC_PATH": "src"
+  "dependencies": {
+    "extract-opts": "^3.2.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "coffee-script": "^1.10.0",
+    "coffeelint": "^1.15.7",
+    "joe": "^1.6.0",
+    "joe-reporter-console": "^1.2.1",
+    "projectz": "^1.1.5"
   }
 }
