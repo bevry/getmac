@@ -77,7 +77,6 @@
     }
   ],
   "main": "es5/lib/getmac.js",
-  "browser": "es5/lib/getmac.js",
   "bin": {
     "getmac-node": "bin/getmac-node"
   },
