@@ -30,6 +30,12 @@ Get the mac address of the current machine you are on
 
 <!-- /DESCRIPTION -->
 
+Will run anywhere that the underlying commands are present:
+
+- On Windows, [getmac](https://technet.microsoft.com/en-us/library/ff961509(v=ws.10).aspx) is used
+
+- On Unix/Linux/Mac, [ifconfig](http://man7.org/linux/man-pages/man8/ifconfig.8.html) is used if present, otherwise [ip](http://man7.org/linux/man-pages/man8/ip.8.html) is used
+
 
 <!-- INSTALL/ -->
 
