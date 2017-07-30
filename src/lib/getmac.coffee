@@ -10,23 +10,23 @@ zeroRegex = /(?:[0]{2}[:\-]){5}[0]{2}/
 # Filter By Interface
 # filterByInterface(iface, str)
 filterByInterface = (iface, str) ->
-	iface = new RegExp "#{iface}[:\\s]"
-	lines = str.split /\r?\n/g
+	iface = new RegExp("#{iface}[:\\s]")
+	lines = str.split(/\r?\n/g)
 	result = ''
-	padding = undefined
+	padding = null
 
 	for line in lines
 		if result.length is 0
-			result += line if iface.test line
+			result += line if iface.test(line)
 			continue
-		else if padding is undefined
-			match = /^(\s+)/.exec line
+		else if padding is null
+			match = /^(\s+)/.exec(line)
 			if match
 				result += "\n#{line}"
-				padding = new RegExp "^#{match[1]}"
+				padding = new RegExp("^#{match[1]}")
 				continue
 		else
-			match = padding.exec line
+			match = padding.exec(line)
 			if match
 				result += "\n#{line}"
 				continue
@@ -49,7 +49,7 @@ getMac = (opts, next) ->
 	# Extract Mac
 	extractMac = (data, next) ->
 		# Prepare
-		data = filterByInterface iface, data if iface
+		data = filterByInterface(iface, data) if iface
 		result = null
 
 		# Find a valid mac address
