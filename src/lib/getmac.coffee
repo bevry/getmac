@@ -7,13 +7,41 @@ isWindows = process.platform.indexOf('win') is 0
 macRegex = /(?:[a-z0-9]{2}[:\-]){5}[a-z0-9]{2}/ig
 zeroRegex = /(?:[0]{2}[:\-]){5}[0]{2}/
 
+# Filter By Interface
+# filterByInterface(iface, str)
+filterByInterface = (iface, str) ->
+	iface = new RegExp "#{iface}[:\\s]"
+	lines = str.split /\r?\n/g
+	result = ''
+	padding = undefined
+
+	for line in lines
+		if result.length is 0
+			result += line if iface.test line
+			continue
+		else if padding is undefined
+			match = /^(\s+)/.exec line
+			if match
+				result += "\n#{line}"
+				padding = new RegExp "^#{match[1]}"
+				continue
+		else
+			match = padding.exec line
+			if match
+				result += "\n#{line}"
+				continue
+		break
+
+	result
+
 # Get Mac
 # next(err,macAddress)
 getMac = (opts, next) ->
 	# Prepare
 	[opts, next] = extractOptsAndCallback(opts, next)
-	{data} = opts
+	{data, iface} = opts
 	data ?= null
+	iface ?= null
 
 	# Command
 	command = if isWindows then "getmac" else "ifconfig -a || ip link"
@@ -21,6 +49,7 @@ getMac = (opts, next) ->
 	# Extract Mac
 	extractMac = (data, next) ->
 		# Prepare
+		data = filterByInterface iface, data if iface
 		result = null
 
 		# Find a valid mac address

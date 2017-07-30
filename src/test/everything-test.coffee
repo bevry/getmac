@@ -51,6 +51,13 @@ joe.describe 'getmac', (describe,it) ->
 				expect(macAddress).to.eql('00:18:31:8A:41:C6')
 				return done()
 
+		it 'got the mac address of eth0 successfully', (done) ->
+			getMac {data, iface: 'eth0'}, (err, macAddress) ->
+				return done(err) if err
+				expect(err).to.be.null
+				expect(macAddress).to.eql('00:18:31:8A:41:C6')
+				return done()
+
 	describe 'preset ifconfig', (describe,it) ->
 		data = """
 			lo0: flags=8049<UP,LOOPBACK,RUNNING,MULTICAST> mtu 16384
@@ -82,6 +89,13 @@ joe.describe 'getmac', (describe,it) ->
 				expect(macAddress).to.eql('b8:8d:12:07:6b:ac')
 				return done()
 
+		it 'got the mac address of p2p0 successfully', (done) ->
+			getMac {data, iface: 'p2p0'}, (err, macAddress) ->
+				return done(err)  if err
+				expect(err).to.be.null
+				expect(macAddress).to.eql('0a:8d:12:07:6a:bc')
+				return done()
+
 	describe 'preset ip link', (describe,it) ->
 		data = """
 			1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default
@@ -99,6 +113,13 @@ joe.describe 'getmac', (describe,it) ->
 				return done(err)  if err
 				expect(err).to.be.null
 				expect(macAddress).to.eql('bc:76:4e:20:7d:dd')
+				return done()
+
+		it 'got the mac address of eth1 successfully', (done) ->
+			getMac {data, iface: 'eth1'}, (err, macAddress) ->
+				return done(err)  if err
+				expect(err).to.be.null
+				expect(macAddress).to.eql('bc:76:4e:20:99:be')
 				return done()
 
 	describe 'system', (describe,it) ->
