@@ -1,19 +1,19 @@
 # Import
 joe = require('joe')
-{expect} = require('chai')
-{getMac,isMac,macRegex} = require('../lib/getmac')
+{equal, errorEqual} = require('assert-helpers')
+{getMac,isMac,macRegex} = require('../')
 
 # Test
 joe.describe 'getmac', (describe,it) ->
 	describe 'validation', (describe,it) ->
 		it 'validates dashed mac correctly', ->
-			expect(isMac 'e4:ce:8f:5b:a7:fe').to.be.true
+			equal(isMac('e4:ce:8f:5b:a7:fe'), true)
 
 		it 'validates coloned mac correctly', ->
-			expect(isMac 'e4-ce-8f-5b-a7-fe').to.be.true
+			equal(isMac('e4-ce-8f-5b-a7-fe'), true)
 
 		it 'validates non-mac correctly', ->
-			expect(isMac 'e4:ce:8f:5b:a7fe').to.be.false
+			equal(isMac('e4:ce:8f:5b:a7fe'), false)
 
 	describe 'preset ipconfig', (describe,it) ->
 		data = """
@@ -47,15 +47,15 @@ joe.describe 'getmac', (describe,it) ->
 		it 'got the default mac address successfully', (done) ->
 			getMac {data}, (err, macAddress) ->
 				return done(err)  if err
-				expect(err).to.be.null
-				expect(macAddress).to.eql('00:18:31:8A:41:C6')
+				errorEqual(err, null)
+				equal(macAddress, '00:18:31:8A:41:C6')
 				return done()
 
 		it 'got the mac address of eth0 successfully', (done) ->
 			getMac {data, iface: 'eth0'}, (err, macAddress) ->
 				return done(err) if err
-				expect(err).to.be.null
-				expect(macAddress).to.eql('00:18:31:8A:41:C6')
+				errorEqual(err, null)
+				equal(macAddress, '00:18:31:8A:41:C6')
 				return done()
 
 	describe 'preset ifconfig', (describe,it) ->
@@ -85,15 +85,15 @@ joe.describe 'getmac', (describe,it) ->
 		it 'got the default mac address successfully', (done) ->
 			getMac {data}, (err, macAddress) ->
 				return done(err)  if err
-				expect(err).to.be.null
-				expect(macAddress).to.eql('b8:8d:12:07:6b:ac')
+				errorEqual(err, null)
+				equal(macAddress, 'b8:8d:12:07:6b:ac')
 				return done()
 
 		it 'got the mac address of p2p0 successfully', (done) ->
 			getMac {data, iface: 'p2p0'}, (err, macAddress) ->
 				return done(err)  if err
-				expect(err).to.be.null
-				expect(macAddress).to.eql('0a:8d:12:07:6a:bc')
+				errorEqual(err, null)
+				equal(macAddress, '0a:8d:12:07:6a:bc')
 				return done()
 
 	describe 'preset ip link', (describe,it) ->
@@ -111,24 +111,40 @@ joe.describe 'getmac', (describe,it) ->
 		it 'got the default mac address successfully', (done) ->
 			getMac {data}, (err, macAddress) ->
 				return done(err)  if err
-				expect(err).to.be.null
-				expect(macAddress).to.eql('bc:76:4e:20:7d:dd')
+				errorEqual(err, null)
+				equal(macAddress, 'bc:76:4e:20:7d:dd')
 				return done()
 
 		it 'got the mac address of eth1 successfully', (done) ->
 			getMac {data, iface: 'eth1'}, (err, macAddress) ->
 				return done(err)  if err
-				expect(err).to.be.null
-				expect(macAddress).to.eql('bc:76:4e:20:99:be')
+				errorEqual(err, null)
+				equal(macAddress, 'bc:76:4e:20:99:be')
 				return done()
 
 	describe 'system', (describe,it) ->
 		it 'got the default mac address successfully', (done) ->
 			getMac (err, macAddress) ->
 				return done(err)  if err
-				expect(err).to.be.null
-				expect(macAddress).to.not.equal('00-00-00-00-00-00')
-				expect(macAddress).to.not.equal('00:00:00:00:00:00')
-				expect(macAddress).to.be.string
-				expect(isMac macAddress).to.be.true
+				errorEqual(err, null)
+				equal(
+					macAddress is '00-00-00-00-00-00',
+					false,
+					"#{macAddress} not 00-00-00-00-00-00"
+				)
+				equal(
+					macAddress is '00:00:00:00:00:00',
+					false,
+					"#{macAddress} not 00:00:00:00:00:00"
+				)
+				equal(
+					typeof macAddress,
+					'string',
+					"#{macAddress} is string"
+				)
+				equal(
+					isMac(macAddress),
+					true,
+					"#{macAddress} is mac address"
+				)
 				return done()

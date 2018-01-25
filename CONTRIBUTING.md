@@ -1,5 +1,5 @@
 <!--
-2016 March 8
+2017 August 25
 https://github.com/bevry/base
 -->
 
@@ -12,27 +12,21 @@ We offer support through our [Official Support Channels](https://bevry.me/suppor
 
 ## Contribute
 
-Our [Contributing Guide](https://learn.bevry.me/community/contribute) contains useful tips and suggestions for how to contribute to this project, it's worth the read.
+Our [Contributing Guide](https://bevry.me/contribute) contains useful tips and suggestions for how to contribute to this project, it's worth the read.
 
 
 ## Development
 
 ### Setup
 
-1. Install [Node.js](/node/install)
+1. Install [Node.js](https://learn.bevry.me/node/install)
 
 1. Fork the project and clone your fork - [guide](https://help.github.com/articles/fork-a-repo/)
 
-1. Install local dependencies
+1. Setup the project for development
 
     ``` bash
-    npm install
-    ```
-
-1. Perform any other setup operations
-
-    ``` bash
-    npm run-script setup
+    npm run our:setup
     ```
 
 
@@ -40,15 +34,15 @@ Our [Contributing Guide](https://learn.bevry.me/community/contribute) contains u
 
 1. Compile changes
 
-	``` bash
-	npm run-script compile
-	```
+    ``` bash
+    npm run our:compile
+    ```
 
 1. Run tests
 
-	``` bash
-	npm run-script verify
-	```
+    ``` bash
+    npm test
+    ```
 
 
 ### Publishing
@@ -65,7 +59,7 @@ Follow these steps in order to implement your changes/improvements into your des
 1. Ensure all tests pass:
 
     ``` bash
-	npm run-script verify
+    npm test
     ```
 
     > If possible, add tests for your change, if you don't know how, mention this in your pull request
@@ -73,9 +67,7 @@ Follow these steps in order to implement your changes/improvements into your des
 1. Ensure the project is ready for publishing:
 
     ```
-    git status
-    git diff
-    npm run-script prepare
+    npm run our:release:prepare
     ```
 
 
@@ -108,11 +100,11 @@ To publish your changes as the project owner:
 1. Add an entry to the changelog following the format of the previous entries, an example of this is:
 
     ``` markdown
-    - v6.29.0 April 1, 2013
-        - Progress on [issue #474](https://github.com/bevry/docpad/issues/474)
-        - DocPad will now set permissions based on the process's ability
-            - Thanks to [Avi Deitcher](https://github.com/deitch), [Stephan Lough](https://github.com/stephanlough) for [issue #165](https://github.com/bevry/docpad/issues/165)
-        - Updated dependencies
+    ## v6.29.0 2013 April 1
+    - Progress on [issue #474](https://github.com/bevry/docpad/issues/474)
+    - DocPad will now set permissions based on the process's ability
+        - Thanks to [Avi Deitcher](https://github.com/deitch), [Stephan Lough](https://github.com/stephanlough) for [issue #165](https://github.com/bevry/docpad/issues/165)
+    - Updated dependencies
     ```
 
 
@@ -122,15 +114,11 @@ To publish your changes as the project owner:
 1. Ensure the project is ready for publishing:
 
     ```
-    git status
-    git diff
-    npm run-script prepare
+    npm run our:release:prepare
     ```
 
 1. Prepare the release and publish it to npm and git:
 
     ``` bash
-    npm run-script release
+    npm run our:release
     ```
-
-	> A prompt will occur asking you for a git tag annotation, enter the changelog entry that we created earlier, save and exit the prompt.

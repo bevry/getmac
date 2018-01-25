@@ -1,5 +1,10 @@
 # History
 
+## v1.4.0 2018 January 25
+- Now compiled with CoffeeScript v2
+- Now uses [editions](https://github.com/bevry/editions) to use the ESNext compiled edition for environments that support it, otherwise use the ES2015 compiled edition
+- Updated base files
+
 ## v1.3.0 2018 January 25
 - Fetch the mac address of a specific interface using the `iface` option
   - Thanks to [caasi Huang](https://github.com/caasi) for [pull request #22](https://github.com/bevry/getmac/pull/22)
