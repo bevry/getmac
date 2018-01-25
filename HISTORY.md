@@ -1,5 +1,9 @@
 # History
 
+## v1.3.0 2018 January 25
+- Fetch the mac address of a specific interface using the `iface` option
+  - Thanks to [caasi Huang](https://github.com/caasi) for [pull request #22](https://github.com/bevry/getmac/pull/22)
+
 ## v1.2.1 2016 May 10
 - Use down interfaces as well as up interfaces
 	- Thanks to [Ted Shroyer](https://github.com/tedshroyer) for [pull request #15](https://github.com/bevry/getmac/pull/15)
