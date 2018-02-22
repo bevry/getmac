@@ -39,6 +39,18 @@ Will run anywhere that the underlying commands are present:
 
 - On Unix/Linux/Mac, [ifconfig](http://man7.org/linux/man-pages/man8/ifconfig.8.html) is used if present, otherwise [ip](http://man7.org/linux/man-pages/man8/ip.8.html) is used
 
+- Other environments are not supported as they provide no way of fetching the mac address.
+
+That means:
+
+- If you are building a server app, or a desktop app, and wanting to get the mac address of where the node.js process is run, then this will work as expected.
+
+- If you are building a server app, this will only get the mac address of the server. There is no way to get a web browser user's mac address without installing software on their computer.
+
+- If you are building an electron app, you can run this on the server-side then communicate it to the client side.
+
+- This library will not run in web browsers / on the client-side / in webpack / in browserify / in angular / in react / in jQuery / in HTML. It will only run on node.js environments, which the web browser is not.
+
 
 <!-- INSTALL/ -->
 
