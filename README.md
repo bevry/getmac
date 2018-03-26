@@ -79,10 +79,11 @@ That means:
 
 ### CLI
 
-1. Install Globally: `install -g getmac`
-2. Run with: `getmac-node`
+Install globally `npm install -g getmac`, then run with `getmac-node`
 
 ### API
+
+Install locally `npm install --save getmac`, then use like so:
 
 ``` javascript
 // Fetch the computer's mac address
