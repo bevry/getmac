@@ -19,14 +19,14 @@ cache:
   - "$HOME/.npm"
   - "$HOME/.yarn-cache"
 install:
-- eval "$(curl -s https://raw.githubusercontent.com/bevry/awesome-travis/ef794235b7094de5e49fb64e226da032ce135ecd/scripts/node-install.bash)"
+- eval "$(curl -fsSL https://raw.githubusercontent.com/bevry/awesome-travis/1ec050bc004d0e2161cb5286c247850d24aecc02/scripts/node-install.bash)"
 before_script:
-- eval "$(curl -s https://raw.githubusercontent.com/bevry/awesome-travis/ef794235b7094de5e49fb64e226da032ce135ecd/scripts/node-verify.bash)"
+- eval "$(curl -fsSL https://raw.githubusercontent.com/bevry/awesome-travis/1ec050bc004d0e2161cb5286c247850d24aecc02/scripts/node-verify.bash)"
 after_success:
-- eval "$(curl -s https://raw.githubusercontent.com/bevry/awesome-travis/ef794235b7094de5e49fb64e226da032ce135ecd/scripts/node-publish.bash)"
+- eval "$(curl -fsSL https://raw.githubusercontent.com/bevry/awesome-travis/1ec050bc004d0e2161cb5286c247850d24aecc02/scripts/node-publish.bash)"
 notifications:
   slack:
-    secure: DwQnTqfrLrjAxJsn9DrxwrAbvINA5x7Bc1hq8kXlX39tqX26ljlHrM0dpQyd2ys84zOJAPG+8TKZJbBcbp1tOskaHiJ9pv8qOoq+HpiYjajDJ5oxzgMl7Q6A9HHhJ2zhs0O5KrVIkeeaoo5cWo2PHnj3OrAsXUvpAyhqMlPqHKM=
+    secure: MQGgHpYeUHQbyiw3D+FpvVbDyd1OcVS/p0bCvpvzLL4LzH1R9WNAXL7HeTSGylLpX67Uv3413gIEZrm+o8OQMNLov5hDVYTbx07ZZ1selD1qSEUgcN6K+WljgOhVI0xPLjX9ViRWwAG2r2a1cPFVU6HLK7qiOExt7rlz7xuj66Y=
   email:
     recipients:
-      secure: JRa+7sHk7DOYr/tRX8Y6uaMYMnCr8bPSw2yhTt3aleBGtzyHhRH+Q8DxH0fVWPlZfXbIWFo7DR6eNIDI27V4rOeMsouefS5HYvqngxAfde2nw08rxpr/Hdh6GNBcrLRyfaUKpN9NclAkOC2jBNpbyGLD3THTzyVzQZQvvdT9pvQ=
+      secure: frSEzR8c0R0eqZHmbQ26KQwH+kGA0ocpnOCtfBdRB05Q/X3GvXJbGV8KuLq1h3ib5nAutjml7m7/CojVCPIS+bcnmXLezdgJuj2P9K/0R15AIj16ICSSU06ljUBCo9EG17Myw1f5b0fBxk+3f34qw8n1fdD2a98wuTUyVTuhZNo=
