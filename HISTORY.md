@@ -1,5 +1,10 @@
 # History
 
+## v1.4.1 2018 March 28
+- Fix `getmac-node` not working
+    - Thanks to [harrytse](https://github.com/klouskingsley) for [issue #28](https://github.com/bevry/getmac/issues/28) and [DarryllRobinson](https://github.com/DarryllRobinson) for [issue #27](https://github.com/bevry/getmac/issues/27)
+- Updated base files
+
 ## v1.4.0 2018 January 25
 - Now compiled with CoffeeScript v2
 - Now uses [editions](https://github.com/bevry/editions) to use the ESNext compiled edition for environments that support it, otherwise use the ES2015 compiled edition
