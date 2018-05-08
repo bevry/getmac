@@ -10,7 +10,7 @@ zeroRegex = /(?:[0]{2}[:\-]){5}[0]{2}/
 # Filter By Interface
 # filterByInterface(iface, str)
 filterByInterface = (iface, str) ->
-	iface = new RegExp("#{iface}[:\\s]")
+	iface = new RegExp("#{iface}[:\\s]?")
 	lines = str.split(/\r?\n/g)
 	result = ''
 	padding = null
@@ -44,7 +44,7 @@ getMac = (opts, next) ->
 	iface ?= null
 
 	# Command
-	command = if isWindows then "getmac" else "ifconfig -a || ip link"
+	command = if isWindows then "getmac /nh /v" else "ifconfig -a || ip link"
 
 	# Extract Mac
 	extractMac = (data, next) ->
