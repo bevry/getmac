@@ -44,7 +44,7 @@ getMac = (opts, next) ->
 	iface ?= null
 
 	# Command
-	command = if isWindows then "getmac" else "/sbin/ifconfig -a || /sbin/ip link"
+	command = if isWindows then "%SystemRoot%/System32/getmac.exe" else "/sbin/ifconfig -a || /sbin/ip link"
 
 	# Extract Mac
 	extractMac = (data, next) ->
