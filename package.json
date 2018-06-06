@@ -1,6 +1,6 @@
 {
   "name": "getmac",
-  "version": "1.4.1",
+  "version": "1.4.3",
   "description": "Get the mac address of the current machine you are on",
   "homepage": "https://github.com/bevry/getmac",
   "license": "MIT",
@@ -46,7 +46,8 @@
     "Benjamin Lupton <b@lupton.cc> (http://balupton.com)",
     "Stephen Brown II <Stephen.Brown2@gmail.com> (https://github.com/StephenBrown2)",
     "ted shroyer (https://github.com/tedshroyer)",
-    "caasi Huang (http://caasih.net)"
+    "caasi Huang (http://caasih.net)",
+    "zboszor (https://github.com/zboszor)"
   ],
   "bugs": {
     "url": "https://github.com/bevry/getmac/issues"
