@@ -154,7 +154,8 @@ These amazing people have contributed code to this project:
 <ul><li><a href="http://balupton.com">Benjamin Lupton</a> — <a href="https://github.com/bevry/getmac/commits?author=balupton" title="View the GitHub contributions of Benjamin Lupton on repository bevry/getmac">view contributions</a></li>
 <li><a href="https://github.com/StephenBrown2">Stephen Brown II</a> — <a href="https://github.com/bevry/getmac/commits?author=StephenBrown2" title="View the GitHub contributions of Stephen Brown II on repository bevry/getmac">view contributions</a></li>
 <li><a href="https://github.com/tedshroyer">ted shroyer</a> — <a href="https://github.com/bevry/getmac/commits?author=tedshroyer" title="View the GitHub contributions of ted shroyer on repository bevry/getmac">view contributions</a></li>
-<li><a href="http://caasih.net">caasi Huang</a> — <a href="https://github.com/bevry/getmac/commits?author=caasi" title="View the GitHub contributions of caasi Huang on repository bevry/getmac">view contributions</a></li></ul>
+<li><a href="http://caasih.net">caasi Huang</a> — <a href="https://github.com/bevry/getmac/commits?author=caasi" title="View the GitHub contributions of caasi Huang on repository bevry/getmac">view contributions</a></li>
+<li><a href="https://github.com/zboszor">zboszor</a> — <a href="https://github.com/bevry/getmac/commits?author=zboszor" title="View the GitHub contributions of zboszor on repository bevry/getmac">view contributions</a></li></ul>
 
 <a href="https://github.com/bevry/getmac/blob/master/CONTRIBUTING.md#files">Discover how you can contribute by heading on over to the <code>CONTRIBUTING.md</code> file.</a>
 
