@@ -1,5 +1,9 @@
 # History
 
+## v1.4.3 2018 June 7
+- Fix running getmac on windows when system32 is not in their path
+    - Thanks to [Gustavo Costa Neves](https://github.com/guhcostan) for [pull request #35](https://github.com/bevry/getmac/pull/37)
+
 ## v1.4.2 2018 June 6
 - Fix running as restricted user on linux
     - Thanks to [zboszor](https://github.com/zboszor) for [pull request #35](https://github.com/bevry/getmac/pull/35)
