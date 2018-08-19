@@ -1,5 +1,9 @@
 # History
 
+## v1.4.4 2018 August 19
+- Minimum supported node version is now 0.8
+- Updated base files and [editions](https://github.com/bevry/editions) using [boundation](https://github.com/bevry/boundation)
+
 ## v1.4.3 2018 June 7
 - Fix running getmac on windows when system32 is not in their path
     - Thanks to [Gustavo Costa Neves](https://github.com/guhcostan) for [pull request #35](https://github.com/bevry/getmac/pull/37)
