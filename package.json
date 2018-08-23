@@ -1,6 +1,6 @@
 {
   "name": "getmac",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "description": "Get the mac address of the current machine you are on",
   "homepage": "https://github.com/bevry/getmac",
   "license": "MIT",
@@ -109,7 +109,6 @@
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.7.0",
-    "babel-preset-es2015": "^6.24.1",
     "coffeelint": "^2.1.0",
     "coffeescript": "^2.3.1",
     "joe": "^2.0.2",

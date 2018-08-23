@@ -1,5 +1,8 @@
 # History
 
+## v1.4.5 2018 August 24
+- Updated dependencies
+
 ## v1.4.4 2018 August 19
 - Minimum supported node version is now 0.10
 - Updated base files and [editions](https://github.com/bevry/editions) using [boundation](https://github.com/bevry/boundation)

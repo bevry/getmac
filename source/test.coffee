@@ -1,21 +1,21 @@
 # Import
 joe = require('joe')
 {equal, errorEqual} = require('assert-helpers')
-{getMac,isMac,macRegex} = require('../')
+{getMac,isMac,macRegex} = require('./')
 
 # Test
-joe.describe 'getmac', (describe,it) ->
-	describe 'validation', (describe,it) ->
-		it 'validates dashed mac correctly', ->
+joe.suite 'getmac', (suite,test) ->
+	suite 'validation', (suite,test) ->
+		test 'validates dashed mac correctly', ->
 			equal(isMac('e4:ce:8f:5b:a7:fe'), true)
 
-		it 'validates coloned mac correctly', ->
+		test 'validates coloned mac correctly', ->
 			equal(isMac('e4-ce-8f-5b-a7-fe'), true)
 
-		it 'validates non-mac correctly', ->
+		test 'validates non-mac correctly', ->
 			equal(isMac('e4:ce:8f:5b:a7fe'), false)
 
-	describe 'preset ipconfig', (describe,it) ->
+	suite 'preset ipconfig', (suite,test) ->
 		data = """
 			can0      Link encap:UNSPEC  HWaddr 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00
 			          UP RUNNING NOARP  MTU:16  Metric:1
@@ -44,21 +44,21 @@ joe.describe 'getmac', (describe,it) ->
 		  RX bytes:230580 (225.1 KiB)  TX bytes:230580 (225.1 KiB)
 		  """
 
-		it 'got the default mac address successfully', (done) ->
+		test 'got the default mac address successfully', (done) ->
 			getMac {data}, (err, macAddress) ->
 				return done(err)  if err
 				errorEqual(err, null)
 				equal(macAddress, '00:18:31:8A:41:C6')
 				return done()
 
-		it 'got the mac address of eth0 successfully', (done) ->
+		test 'got the mac address of eth0 successfully', (done) ->
 			getMac {data, iface: 'eth0'}, (err, macAddress) ->
 				return done(err) if err
 				errorEqual(err, null)
 				equal(macAddress, '00:18:31:8A:41:C6')
 				return done()
 
-	describe 'preset ifconfig', (describe,it) ->
+	suite 'preset ifconfig', (suite,test) ->
 		data = """
 			lo0: flags=8049<UP,LOOPBACK,RUNNING,MULTICAST> mtu 16384
 				options=3<RXCSUM,TXCSUM>
@@ -82,21 +82,21 @@ joe.describe 'getmac', (describe,it) ->
 				inet6 fd3b:93f0:b200:5fe1:a1ae:4a2:5287:ae68 prefixlen 64
 		  """
 
-		it 'got the default mac address successfully', (done) ->
+		test 'got the default mac address successfully', (done) ->
 			getMac {data}, (err, macAddress) ->
 				return done(err)  if err
 				errorEqual(err, null)
 				equal(macAddress, 'b8:8d:12:07:6b:ac')
 				return done()
 
-		it 'got the mac address of p2p0 successfully', (done) ->
+		test 'got the mac address of p2p0 successfully', (done) ->
 			getMac {data, iface: 'p2p0'}, (err, macAddress) ->
 				return done(err)  if err
 				errorEqual(err, null)
 				equal(macAddress, '0a:8d:12:07:6a:bc')
 				return done()
 
-	describe 'preset ip link', (describe,it) ->
+	suite 'preset ip link', (suite,test) ->
 		data = """
 			1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default
 			    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -108,22 +108,22 @@ joe.describe 'getmac', (describe,it) ->
 			    link/sit 0.0.0.0 brd 0.0.0.0
 		  """
 
-		it 'got the default mac address successfully', (done) ->
+		test 'got the default mac address successfully', (done) ->
 			getMac {data}, (err, macAddress) ->
 				return done(err)  if err
 				errorEqual(err, null)
 				equal(macAddress, 'bc:76:4e:20:7d:dd')
 				return done()
 
-		it 'got the mac address of eth1 successfully', (done) ->
+		test 'got the mac address of eth1 successfully', (done) ->
 			getMac {data, iface: 'eth1'}, (err, macAddress) ->
 				return done(err)  if err
 				errorEqual(err, null)
 				equal(macAddress, 'bc:76:4e:20:99:be')
 				return done()
 
-	describe 'system', (describe,it) ->
-		it 'got the default mac address successfully', (done) ->
+	suite 'system', (suite,test) ->
+		test 'got the default mac address successfully', (done) ->
 			getMac (err, macAddress) ->
 				return done(err)  if err
 				errorEqual(err, null)
@@ -148,3 +148,6 @@ joe.describe 'getmac', (describe,it) ->
 					"#{macAddress} is mac address"
 				)
 				return done()
+
+	test 'package.json:main', ->
+		require('../')
