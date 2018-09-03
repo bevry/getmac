@@ -1,5 +1,8 @@
 # History
 
+## v1.4.6 2018 September 3
+- Updated base files and [editions](https://github.com/bevry/editions) using [boundation](https://github.com/bevry/boundation)
+
 ## v1.4.5 2018 August 24
 - Updated dependencies
 
