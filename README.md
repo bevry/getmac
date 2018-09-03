@@ -64,8 +64,8 @@ That means:
 
 <ul><li><code>getmac</code> aliases <code>getmac/index.js</code> which uses <a href="https://github.com/bevry/editions" title="Editions are the best way to produce and consume packages you care about.">Editions</a> to automatically select the correct edition for the consumers environment</li>
 <li><code>getmac/source/index.coffee</code> is coffeescript source code with require for modules</li>
-<li><code>getmac/edition:esnext/index.js</code> is coffeescript compiled for node.js with require for modules</li>
-<li><code>getmac/edition:node:0.10/index.js</code> is coffeescript compiled for node.js >=0.10 with require for modules</li></ul>
+<li><code>getmac/edition-esnext/index.js</code> is coffeescript compiled for node.js with require for modules</li>
+<li><code>getmac/edition-node-0.10/index.js</code> is coffeescript compiled for node.js >=0.10 with require for modules</li></ul>
 
 <!-- /INSTALL -->
 

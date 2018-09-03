@@ -70,7 +70,7 @@
     },
     {
       "description": "coffeescript compiled for node.js with require for modules",
-      "directory": "edition:esnext",
+      "directory": "edition-esnext",
       "entry": "index.js",
       "syntaxes": [
         "javascript",
@@ -84,7 +84,7 @@
     },
     {
       "description": "coffeescript compiled for node.js >=0.10 with require for modules",
-      "directory": "edition:node:0.10",
+      "directory": "edition-node-0.10",
       "entry": "index.js",
       "syntaxes": [
         "javascript",
@@ -101,7 +101,7 @@
   },
   "main": "index.js",
   "dependencies": {
-    "editions": "^2.0.0",
+    "editions": "^2.0.2",
     "extract-opts": "^3.2.0"
   },
   "devDependencies": {
@@ -117,11 +117,10 @@
   },
   "scripts": {
     "our:clean": "rm -Rf ./docs ./edition:* ./es2015 ./es5 ./out",
-    "our:compile": "npm run our:compile:edition",
-    "our:compile:edition": "npm run our:compile:edition:esnext && npm run our:compile:edition:node",
-    "our:compile:edition:esnext": "coffee -bco ./edition:esnext ./source",
-    "our:compile:edition:node": "npm run our:compile:edition:node:0.10",
-    "our:compile:edition:node:0.10": "env BABEL_ENV=edition:node:0.10 coffee -bcto ./edition:node:0.10/ ./source",
+    "our:compile": "npm run our:compile:edition && npm run our:compile:edition-node-0.10",
+    "our:compile:edition": "npm run our:compile:edition:esnext",
+    "our:compile:edition-node-0.10": "env BABEL_ENV=edition-node-0.10 coffee -bcto ./edition-node-0.10/ ./source",
+    "our:compile:edition:esnext": "coffee -bco ./edition-esnext ./source",
     "our:deploy": "echo no need for this project",
     "our:meta": "npm run our:meta:projectz",
     "our:meta:projectz": "projectz compile",
@@ -140,7 +139,7 @@
   },
   "babel": {
     "env": {
-      "edition:node:0.10": {
+      "edition-node-0.10": {
         "presets": [
           [
             "env",
