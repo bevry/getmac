@@ -105,7 +105,7 @@
     "extract-opts": "^3.2.0"
   },
   "devDependencies": {
-    "assert-helpers": "^4.5.1",
+    "assert-helpers": "^5.0.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.7.0",
