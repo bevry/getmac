@@ -1,6 +1,6 @@
 {
   "name": "getmac",
-  "version": "1.4.6",
+  "version": "1.5.0",
   "description": "Get the mac address of the current machine you are on",
   "homepage": "https://github.com/bevry/getmac",
   "license": "MIT",
@@ -20,20 +20,29 @@
       "daviddmdev",
       "---",
       "patreon",
-      "opencollective",
       "flattr",
+      "liberapay",
+      "buymeacoffee",
+      "opencollective",
+      "crypto",
       "paypal",
-      "bitcoin",
       "wishlist"
     ],
     "config": {
-      "patreonUsername": "bevry",
-      "opencollectiveUsername": "bevry",
+      "buymeacoffeeUsername": "balupton",
+      "cryptoURL": "https://bevry.me/crypto",
       "flattrUsername": "balupton",
+      "liberapayUsername": "bevry",
+      "opencollectiveUsername": "bevry",
+      "patreonUsername": "bevry",
       "paypalURL": "https://bevry.me/paypal",
-      "bitcoinURL": "https://bevry.me/bitcoin",
-      "wishlistURL": "https://bevry.me/wishlist"
+      "wishlistURL": "https://bevry.me/wishlist",
+      "travisTLD": "com"
     }
+  },
+  "funding": {
+    "type": "cooperative",
+    "url": "https://bevry.me/fund"
   },
   "author": "2013+ Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
   "maintainers": [
@@ -43,7 +52,7 @@
     "Benjamin Lupton <b@lupton.cc> (http://balupton.com)",
     "Stephen Brown II <Stephen.Brown2@gmail.com> (https://github.com/StephenBrown2)",
     "ted shroyer (https://github.com/tedshroyer)",
-    "caasi Huang (http://caasih.net)",
+    "Isaac Huang (http://caasih.net)",
     "zboszor (https://github.com/zboszor)",
     "Gustavo Costa Neves <guhcostan@gmail.com> (https://github.com/guhcostan)"
   ],
@@ -62,7 +71,7 @@
       "description": "coffeescript source code with require for modules",
       "directory": "source",
       "entry": "index.coffee",
-      "syntaxes": [
+      "tags": [
         "coffeescript",
         "require"
       ],
@@ -72,26 +81,26 @@
       "description": "coffeescript compiled for node.js with require for modules",
       "directory": "edition-esnext",
       "entry": "index.js",
-      "syntaxes": [
+      "tags": [
         "javascript",
         "esnext",
         "require"
       ],
       "engines": {
-        "node": ">=6",
+        "node": "6 || 8 || 10 || 12 || 13",
         "browsers": false
       }
     },
     {
-      "description": "coffeescript compiled for node.js >=0.10 with require for modules",
+      "description": "coffeescript compiled for node.js 0.10 with require for modules",
       "directory": "edition-node-0.10",
       "entry": "index.js",
-      "syntaxes": [
+      "tags": [
         "javascript",
         "require"
       ],
       "engines": {
-        "node": "0.10 || 0.12 || 4 || 6 || 8 || 10",
+        "node": "0.10 || 0.12 || 4 || 6 || 8 || 10 || 12 || 13",
         "browsers": false
       }
     }
@@ -101,26 +110,26 @@
   },
   "main": "index.js",
   "dependencies": {
-    "editions": "^2.0.2",
-    "extract-opts": "^3.2.0"
+    "editions": "^2.2.0",
+    "extract-opts": "^3.3.1"
   },
   "devDependencies": {
-    "assert-helpers": "^4.5.1",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
+    "@babel/cli": "^7.7.0",
+    "@babel/core": "^7.7.2",
+    "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
+    "@babel/preset-env": "^7.7.1",
+    "assert-helpers": "4.10.0",
     "coffeelint": "^2.1.0",
-    "coffeescript": "^2.3.1",
-    "joe": "^2.0.2",
-    "joe-reporter-console": "^2.0.2",
-    "projectz": "^1.4.0"
+    "coffeescript": "^2.4.1",
+    "kava": "^3.2.0",
+    "projectz": "^1.9.0",
+    "valid-directory": "^1.0.0"
   },
   "scripts": {
-    "our:clean": "rm -Rf ./docs ./edition:* ./es2015 ./es5 ./out",
-    "our:compile": "npm run our:compile:edition && npm run our:compile:edition-node-0.10",
-    "our:compile:edition": "npm run our:compile:edition:esnext",
+    "our:clean": "rm -Rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
+    "our:compile": "npm run our:compile:edition-esnext && npm run our:compile:edition-node-0.10",
+    "our:compile:edition-esnext": "coffee -bco ./edition-esnext ./source",
     "our:compile:edition-node-0.10": "env BABEL_ENV=edition-node-0.10 coffee -bcto ./edition-node-0.10/ ./source",
-    "our:compile:edition:esnext": "coffee -bco ./edition-esnext ./source",
     "our:deploy": "echo no need for this project",
     "our:meta": "npm run our:meta:projectz",
     "our:meta:projectz": "projectz compile",
@@ -130,25 +139,31 @@
     "our:release:prepare": "npm run our:clean && npm run our:compile && npm run our:test && npm run our:meta",
     "our:release:push": "git push origin master && git push origin --tags",
     "our:release:tag": "export MESSAGE=$(cat ./HISTORY.md | sed -n \"/## v$npm_package_version/,/##/p\" | sed 's/## //' | awk 'NR>1{print buf}{buf = $0}') && test \"$MESSAGE\" || (echo 'proper changelog entry not found' && exit -1) && git tag v$npm_package_version -am \"$MESSAGE\"",
-    "our:setup": "npm run our:setup:npm",
-    "our:setup:npm": "npm install",
+    "our:setup": "npm run our:setup:install",
+    "our:setup:install": "npm install",
     "our:test": "npm run our:verify && npm test",
-    "our:verify": "npm run our:verify:coffeelint",
+    "our:verify": "npm run our:verify:coffeelint && npm run our:verify:directory",
     "our:verify:coffeelint": "coffeelint ./source",
-    "test": "node --harmony ./test.js --joe-reporter=console"
+    "our:verify:directory": "npx valid-directory",
+    "test": "node ./test.js"
   },
   "babel": {
     "env": {
       "edition-node-0.10": {
+        "sourceType": "script",
         "presets": [
           [
-            "env",
+            "@babel/preset-env",
             {
               "targets": {
                 "node": "0.10"
-              }
+              },
+              "modules": "commonjs"
             }
           ]
+        ],
+        "plugins": [
+          "@babel/proposal-object-rest-spread"
         ]
       }
     }

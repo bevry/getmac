@@ -1,10 +1,10 @@
 # Import
-joe = require('joe')
+kava = require('kava')
 {equal, errorEqual} = require('assert-helpers')
 {getMac,isMac,macRegex} = require('./')
 
 # Test
-joe.suite 'getmac', (suite,test) ->
+kava.suite 'getmac', (suite,test) ->
 	suite 'validation', (suite,test) ->
 		test 'validates dashed mac correctly', ->
 			equal(isMac('e4:ce:8f:5b:a7:fe'), true)
