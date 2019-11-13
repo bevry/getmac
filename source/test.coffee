@@ -148,6 +148,3 @@ kava.suite 'getmac', (suite,test) ->
 					"#{macAddress} is mac address"
 				)
 				return done()
-
-	test 'package.json:main', ->
-		require('../')
