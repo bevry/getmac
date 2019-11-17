@@ -72,10 +72,11 @@ That means:
 
 <p>This package is published with the following editions:</p>
 
-<ul><li><code>getmac</code> aliases <code>getmac/index.js</code> which uses <a href="https://editions.bevry.me" title="Editions are the best way to produce and consume packages you care about.">Editions</a> to automatically select the correct edition for the consumers environment</li>
-<li><code>getmac/source/index.coffee</code> is coffeescript source code with require for modules</li>
-<li><code>getmac/edition-esnext/index.js</code> is coffeescript compiled for node.js with require for modules</li>
-<li><code>getmac/edition-node-0.10/index.js</code> is coffeescript compiled for node.js 0.10 with require for modules</li></ul>
+<ul><li><code>getmac/source/index.coffee</code> is coffeescript source code with require for modules</li>
+<li><code>getmac</code> aliases <code>getmac/edition-esnext/index.js</code></li>
+<li><code>getmac/edition-esnext/index.js</code> is coffeescript compiled for node.js with require for modules</li></ul>
+
+<p>Environments older than Node.js v8 may need <a href="https://babeljs.io/docs/usage/polyfill/" title="A polyfill that emulates missing ECMAScript environment features">Babel's Polyfill</a> or something similar.</p>
 
 <!-- /INSTALL -->
 
@@ -164,7 +165,8 @@ These amazing people have contributed code to this project:
 <li><a href="https://github.com/tedshroyer">ted shroyer</a> — <a href="https://github.com/bevry/getmac/commits?author=tedshroyer" title="View the GitHub contributions of ted shroyer on repository bevry/getmac">view contributions</a></li>
 <li><a href="http://caasih.net">Isaac Huang</a> — <a href="https://github.com/bevry/getmac/commits?author=caasi" title="View the GitHub contributions of Isaac Huang on repository bevry/getmac">view contributions</a></li>
 <li><a href="https://github.com/zboszor">zboszor</a> — <a href="https://github.com/bevry/getmac/commits?author=zboszor" title="View the GitHub contributions of zboszor on repository bevry/getmac">view contributions</a></li>
-<li><a href="https://github.com/guhcostan">Gustavo Costa Neves</a> — <a href="https://github.com/bevry/getmac/commits?author=guhcostan" title="View the GitHub contributions of Gustavo Costa Neves on repository bevry/getmac">view contributions</a></li></ul>
+<li><a href="https://github.com/guhcostan">Gustavo Costa Neves</a> — <a href="https://github.com/bevry/getmac/commits?author=guhcostan" title="View the GitHub contributions of Gustavo Costa Neves on repository bevry/getmac">view contributions</a></li>
+<li><a href="http://github.com/apps/dependabot-preview">dependabot-preview[bot]</a> — <a href="https://github.com/bevry/getmac/commits?author=dependabot-preview[bot]" title="View the GitHub contributions of dependabot-preview[bot] on repository bevry/getmac">view contributions</a></li></ul>
 
 <a href="https://github.com/bevry/getmac/blob/master/CONTRIBUTING.md#files">Discover how you can contribute by heading on over to the <code>CONTRIBUTING.md</code> file.</a>
 
