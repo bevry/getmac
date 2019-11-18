@@ -94,16 +94,10 @@ Install locally `npm install --save getmac`, then use like so:
 import getMAC, { isMAC } from 'getmac'
 
 // Fetch the computer's MAC address
-getMAC(function(err, macAddress) {
-    if (err) throw err
-    console.log(macAddress)
-})
+console.log(getMAC())
 
 // Fetch the computer's MAC address for a specific interace
-getMAC('eth0', function(err, macAddress) {
-    if (err) throw err
-    console.log(macAddress)
-})
+console.log(getMAC('eth0'))
 
 // Validate that an address is a MAC address
 if (isMAC('e4:ce:8f:5b:a7:fc')) {

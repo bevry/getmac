@@ -1,5 +1,10 @@
 # History
 
+## v4.0.0 2019 November 18
+
+-   Uses the built in [`require('os').networkInterfaces()`](https://nodejs.org/dist/latest-v12.x/docs/api/os.html#os_os_networkinterfaces) instead
+-   `getmac-node` now supports receiving the iface name to filter, e.g. `getmac-node en6`
+
 ## v3.0.1 2019 November 18
 
 -   Better handling of errors with the `getmac-node` binary
