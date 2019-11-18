@@ -80,7 +80,7 @@ import getMAC, { isMAC } from 'getmac'
 // Fetch the computer's MAC address
 console.log(getMAC())
 
-// Fetch the computer's MAC address for a specific interace
+// Fetch the computer's MAC address for a specific interface
 console.log(getMAC('eth0'))
 
 // Validate that an address is a MAC address
