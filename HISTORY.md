@@ -1,5 +1,9 @@
 # History
 
+## v4.0.1 2019 November 18
+
+-   MAC addresses with single character parts are now considered valid
+
 ## v4.0.0 2019 November 18
 
 -   Uses the built in [`require('os').networkInterfaces()`](https://nodejs.org/dist/latest-v12.x/docs/api/os.html#os_os_networkinterfaces) instead
