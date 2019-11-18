@@ -1,5 +1,9 @@
 # History
 
+## v4.1.0 2019 November 18
+
+-   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+
 ## v4.0.1 2019 November 18
 
 -   MAC addresses with single character parts are now considered valid
