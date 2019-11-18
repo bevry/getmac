@@ -1,5 +1,13 @@
 # History
 
+## v3.0.0 2019 November 18
+
+-   `getMac` renamed to `getMAC` and has the function signature `(iface?: string) => Promise<string>`
+-   `extractMAC` is now exported, if you already have the MAC interfaces string, with the signature `(input: string, iface?: string) => string`
+-   `isMac` renamed to `isMAC`
+-   Converted to TypeScript
+-   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+
 ## v2.0.0 2019 November 18
 
 -   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)

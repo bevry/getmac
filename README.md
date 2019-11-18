@@ -34,22 +34,21 @@ Get the mac address of the current machine you are on
 
 Will run anywhere that the underlying commands are present:
 
-- On Windows, [getmac](https://technet.microsoft.com/en-us/library/ff961509(v=ws.10).aspx) is used
+-   On Windows, [getmac](<https://technet.microsoft.com/en-us/library/ff961509(v=ws.10).aspx>) is used
 
-- On Unix/Linux/Mac, [ifconfig](http://man7.org/linux/man-pages/man8/ifconfig.8.html) is used if present, otherwise [ip](http://man7.org/linux/man-pages/man8/ip.8.html) is used
+-   On Unix/Linux/Mac, [ifconfig](http://man7.org/linux/man-pages/man8/ifconfig.8.html) is used if present, otherwise [ip](http://man7.org/linux/man-pages/man8/ip.8.html) is used
 
-- Other environments are not supported as they provide no way of fetching the mac address.
+-   Other environments are not supported as they provide no way of fetching the mac address.
 
 That means:
 
-- If you are building a server app, or a desktop app, and wanting to get the mac address of where the node.js process is run, then this will work as expected.
+-   If you are building a server app, or a desktop app, and wanting to get the mac address of where the node.js process is run, then this will work as expected.
 
-- If you are building a server app, this will only get the mac address of the server. There is no way to get a web browser user's mac address without installing software on their computer.
+-   If you are building a server app, this will only get the mac address of the server. There is no way to get a web browser user's mac address without installing software on their computer.
 
-- If you are building an electron app, you can run this on the server-side then communicate it to the client side.
+-   If you are building an electron app, you can run this on the server-side then communicate it to the client side.
 
-- This library will not run in web browsers / on the client-side / in webpack / in browserify / in angular / in react / in jQuery / in HTML. It will only run on node.js environments, which the web browser is not.
-
+-   This library will not run in web browsers / on the client-side / in webpack / in browserify / in angular / in react / in jQuery / in HTML. It will only run on node.js environments, which the web browser is not.
 
 <!-- INSTALL/ -->
 
@@ -72,16 +71,16 @@ That means:
 
 <p>This package is published with the following editions:</p>
 
-<ul><li><code>getmac/source/index.coffee</code> is coffeescript source code with require for modules</li>
-<li><code>getmac</code> aliases <code>getmac/edition-esnext/index.js</code></li>
-<li><code>getmac/edition-esnext/index.js</code> is coffeescript compiled for node.js with require for modules</li></ul>
-
-<p>Environments older than Node.js v8 may need <a href="https://babeljs.io/docs/usage/polyfill/" title="A polyfill that emulates missing ECMAScript environment features">Babel's Polyfill</a> or something similar.</p>
+<ul><li><code>getmac/source/index.ts</code> is typescript source code with import for modules</li>
+<li><code>getmac</code> aliases <code>getmac/edition-node-12/index.js</code></li>
+<li><code>getmac/edition-node-12/index.js</code> is typescript compiled for node.js 12 with require for modules</li></ul>
 
 <!-- /INSTALL -->
 
 
 ## Usage
+
+[API Documentation](http://master.getmac.bevry.surge.sh/docs/)
 
 ### CLI
 
@@ -91,29 +90,28 @@ Install globally `npm install -g getmac`, then run with `getmac-node`
 
 Install locally `npm install --save getmac`, then use like so:
 
-``` javascript
-// Fetch the computer's mac address
-require('getmac').getMac(function(err, macAddress){
-	if (err)  throw err
-	console.log(macAddress)
+```javascript
+import getMAC, { isMAC } from 'getmac'
+
+// Fetch the computer's MAC address
+getMAC(function(err, macAddress) {
+    if (err) throw err
+    console.log(macAddress)
 })
 
-// Fetch the computer's mac address for a specfici interace
-require('getmac').getMac({iface: 'eth0'}, function(err, macAddress){
-	if (err)  throw err
-	console.log(macAddress)
+// Fetch the computer's MAC address for a specific interace
+getMAC('eth0', function(err, macAddress) {
+    if (err) throw err
+    console.log(macAddress)
 })
 
-// Validate that an address is a mac address
-if ( require('getmac').isMac("e4:ce:8f:5b:a7:fc") ) {
-	console.log('valid mac')
-}
-else {
-	console.log('invalid mac')
+// Validate that an address is a MAC address
+if (isMAC('e4:ce:8f:5b:a7:fc')) {
+    console.log('valid MAC')
+} else {
+    console.log('invalid MAC')
 }
 ```
-
-
 
 <!-- HISTORY/ -->
 

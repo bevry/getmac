@@ -13,8 +13,9 @@ install:
 before_script:
 - eval "$(curl -fsSL https://raw.githubusercontent.com/bevry/awesome-travis/c91c9d5eef34ecb0e92029667fd5052640225fa3/scripts/node-verify.bash)"
 after_success:
+- eval "$(curl -fsSL https://raw.githubusercontent.com/bevry/awesome-travis/c91c9d5eef34ecb0e92029667fd5052640225fa3/scripts/surge.bash)"
 - eval "$(curl -fsSL https://raw.githubusercontent.com/bevry/awesome-travis/c91c9d5eef34ecb0e92029667fd5052640225fa3/scripts/node-publish.bash)"
 notifications:
   email:
     recipients:
-      secure: LpSkQpedVu85XgaSwW7AJI9F6+ppjVW6+Nk07e/bVSj4/O0y53UjC98RNXWa9tXq6P+egA9a1XQntm/anAxfWvNinpjZDJJ9/pWbb7SiKmW6t5pDGp+Y8ZRUvWgxHaCHHu/wcKeioQ0rcjq8CxXRKNdyk2/eOfx5dAP6hh0gKRk=
+      secure: o6n622zxTTw9owDq6jyy5g5RLiuopM0LtJqeqrUkigU9xK8QTeI6oNTBJggg0WPYZ2c+UYMmy/UR2GLuqkHPiNF3WnBlIh0vxID9yk5FHirNaLglfbF20p6YZyvGgZdJU4P+KnU0bgVBnu+RrVTRQaN+EA3bU0/TbvU28r4itvk=
