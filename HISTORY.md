@@ -1,5 +1,9 @@
 # History
 
+## v3.0.1 2019 November 18
+
+-   Better handling of errors with the `getmac-node` binary
+
 ## v3.0.0 2019 November 18
 
 -   `getMac` renamed to `getMAC` and has the function signature `(iface?: string) => Promise<string>`
