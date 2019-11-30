@@ -39,15 +39,8 @@ This library will not run in web browsers / on the client-side / in webpack / in
 <h2>Install</h2>
 
 <a href="https://npmjs.com" title="npm is a package manager for javascript"><h3>npm</h3></a>
-<h4>Install Globally</h4>
-<ul>
-<li>Install: <code>npm install --global getmac</code></li>
-<li>Executable: <code>getmac-node</code></li>
-</ul>
-<h4>Install Locally</h4>
 <ul>
 <li>Install: <code>npm install --save getmac</code></li>
-<li>Executable: <code>npx getmac-node</code></li>
 <li>Require: <code>require('getmac')</code></li>
 </ul>
 
