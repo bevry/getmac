@@ -35,25 +35,7 @@ Get the MAC address of the current machine you are on.
 
 This library will not run in web browsers / on the client-side / in webpack / in browserify / in angular / in react / in jQuery / in HTML. It will only run on Node.js environments, which the web browser is not.
 
-<!-- INSTALL/ -->
 
-<h2>Install</h2>
-
-<a href="https://npmjs.com" title="npm is a package manager for javascript"><h3>npm</h3></a>
-<ul>
-<li>Install: <code>npm install --save getmac</code></li>
-<li>Require: <code>require('getmac')</code></li>
-</ul>
-
-<h3><a href="https://editions.bevry.me" title="Editions are the best way to produce and consume packages you care about.">Editions</a></h3>
-
-<p>This package is published with the following editions:</p>
-
-<ul><li><code>getmac/source/index.ts</code> is typescript source code with import for modules</li>
-<li><code>getmac</code> aliases <code>getmac/edition-node-12/index.js</code></li>
-<li><code>getmac/edition-node-12/index.js</code> is typescript compiled for node.js 12 with require for modules</li></ul>
-
-<!-- /INSTALL -->
 
 
 ## Usage
@@ -88,6 +70,28 @@ if (isMAC('e4:ce:8f:5b:a7:fc')) {
 ### Advanced
 
 If you want to do advanced filtering, use [`os.networkInterfaces()`](https://nodejs.org/dist/latest-v12.x/docs/api/os.html#os_os_networkinterfaces) instead.
+
+<!-- INSTALL/ -->
+
+<h2>Install</h2>
+
+<a href="https://npmjs.com" title="npm is a package manager for javascript"><h3>npm</h3></a>
+<ul>
+<li>Install: <code>npm install --save getmac</code></li>
+<li>Import: <code>import pkg from ('getmac')</code></li>
+<li>Require: <code>const pkg = require('getmac').default</code></li>
+</ul>
+
+<h3><a href="https://editions.bevry.me" title="Editions are the best way to produce and consume packages you care about.">Editions</a></h3>
+
+<p>This package is published with the following editions:</p>
+
+<ul><li><code>getmac/source/index.ts</code> is <a href="https://www.typescriptlang.org/" title="TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. ">TypeScript</a> source code with <a href="https://babeljs.io/docs/learn-es2015/#modules" title="ECMAScript Modules">Import</a> for modules</li>
+<li><code>getmac</code> aliases <code>getmac/edition-esnext/index.js</code></li>
+<li><code>getmac/edition-esnext/index.js</code> is <a href="https://www.typescriptlang.org/" title="TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. ">TypeScript</a> compiled against <a href="https://en.wikipedia.org/wiki/ECMAScript#ES.Next" title="ECMAScript Next">ESNext</a> for <a href="https://nodejs.org" title="Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine">Node.js</a> with <a href="https://nodejs.org/dist/latest-v5.x/docs/api/modules.html" title="Node/CJS Modules">Require</a> for modules</li></ul>
+
+<!-- /INSTALL -->
+
 
 <!-- HISTORY/ -->
 

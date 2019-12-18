@@ -1,15 +1,19 @@
 {
   "name": "getmac",
-  "version": "4.4.0",
+  "version": "5.0.0",
   "description": "Get the MAC address of the current machine you are on.",
   "homepage": "https://github.com/bevry/getmac",
   "license": "MIT",
   "keywords": [
-    "mac",
-    "mac-address",
+    "export-default",
+    "getmac",
     "ifconfig",
     "ipconfig",
-    "getmac"
+    "mac",
+    "mac-address",
+    "typed",
+    "types",
+    "typescript"
   ],
   "badges": {
     "list": [
@@ -53,8 +57,7 @@
     "ted shroyer (https://github.com/tedshroyer)",
     "Isaac Huang (http://caasih.net)",
     "zboszor (https://github.com/zboszor)",
-    "Gustavo Costa Neves <guhcostan@gmail.com> (https://github.com/guhcostan)",
-    "dependabot-preview[bot] (http://github.com/apps/dependabot-preview)"
+    "Gustavo Costa Neves <guhcostan@gmail.com> (https://github.com/guhcostan)"
   ],
   "bugs": {
     "url": "https://github.com/bevry/getmac/issues"
@@ -68,7 +71,7 @@
   },
   "editions": [
     {
-      "description": "typescript source code with import for modules",
+      "description": "TypeScript source code with Import for modules",
       "directory": "source",
       "entry": "index.ts",
       "tags": [
@@ -78,55 +81,47 @@
       "engines": false
     },
     {
-      "description": "typescript compiled for node.js 12 with require for modules",
-      "directory": "edition-node-12",
+      "description": "TypeScript compiled against ESNext for Node.js with Require for modules",
+      "directory": "edition-esnext",
       "entry": "index.js",
       "tags": [
         "javascript",
+        "esnext",
         "require"
       ],
       "engines": {
-        "node": "8 || 10 || 12",
-        "browsers": false
+        "node": "8 || 10 || 12 || 13"
       }
     }
   ],
   "types": "source/index.ts",
   "type": "commonjs",
-  "main": "edition-node-12/index.js",
+  "main": "edition-esnext/index.js",
   "dependencies": {
-    "@types/node": "^12.12.14"
+    "@types/node": "^12.12.20"
   },
   "devDependencies": {
-    "@babel/cli": "^7.7.5",
-    "@babel/core": "^7.7.5",
-    "@babel/plugin-proposal-class-properties": "^7.7.4",
-    "@babel/plugin-proposal-object-rest-spread": "^7.7.4",
-    "@babel/plugin-proposal-optional-chaining": "^7.7.5",
-    "@babel/preset-env": "^7.7.6",
-    "@babel/preset-typescript": "^7.7.4",
-    "@typescript-eslint/eslint-plugin": "^2.10.0",
-    "@typescript-eslint/parser": "^2.10.0",
+    "@typescript-eslint/eslint-plugin": "^2.12.0",
+    "@typescript-eslint/parser": "^2.12.0",
     "assert-helpers": "^5.8.0",
-    "babel-plugin-add-module-exports": "^1.0.2",
     "coffeelint": "^2.1.0",
     "coffeescript": "^2.4.1",
     "eslint": "^6.7.2",
     "eslint-config-bevry": "^2.3.0",
     "eslint-config-prettier": "^6.7.0",
-    "eslint-plugin-prettier": "^3.1.1",
-    "kava": "^4.3.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "kava": "^4.4.0",
     "prettier": "^1.19.1",
-    "projectz": "^1.15.0",
+    "projectz": "^1.19.0",
     "surge": "^0.21.3",
-    "typedoc": "^0.15.4",
+    "typedoc": "^0.15.5",
     "typescript": "^3.7.3",
-    "valid-directory": "^1.5.0"
+    "valid-directory": "^1.6.0"
   },
   "scripts": {
     "our:clean": "rm -Rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
-    "our:compile": "npm run our:compile:edition-node-12",
-    "our:compile:edition-node-12": "env BABEL_ENV=edition-node-12 babel --extensions \".ts,.tsx\" --out-dir ./edition-node-12 ./source",
+    "our:compile": "npm run our:compile:edition-esnext",
+    "our:compile:edition-esnext": "tsc --module commonjs --target ESNext --outDir ./edition-esnext --project tsconfig.json && test -d edition-esnext/source && ( mv edition-esnext/source edition-temp && rm -Rf edition-esnext && mv edition-temp edition-esnext ) || true",
     "our:deploy": "echo no need for this project",
     "our:meta": "npm run our:meta:docs && npm run our:meta:projectz",
     "our:meta:docs": "npm run our:meta:docs:typedoc",
@@ -143,11 +138,11 @@
     "our:test": "npm run our:verify && npm test",
     "our:verify": "npm run our:verify:coffeelint && npm run our:verify:directory && npm run our:verify:eslint && npm run our:verify:prettier && npm run our:verify:typescript",
     "our:verify:coffeelint": "coffeelint ./source",
-    "our:verify:directory": "npx valid-directory",
+    "our:verify:directory": "valid-directory",
     "our:verify:eslint": "eslint --fix --ignore-pattern '**/*.d.ts' --ignore-pattern '**/vendor/' --ignore-pattern '**/node_modules/' --ext .mjs,.js,.jsx,.ts,.tsx ./source",
     "our:verify:prettier": "prettier --write ./source/**",
     "our:verify:typescript": "tsc --noEmit --project tsconfig.json",
-    "test": "node ./edition-node-12/test.js"
+    "test": "node ./edition-esnext/test.js"
   },
   "eslintConfig": {
     "extends": [
@@ -157,30 +152,5 @@
   "prettier": {
     "semi": false,
     "singleQuote": true
-  },
-  "babel": {
-    "env": {
-      "edition-node-12": {
-        "sourceType": "module",
-        "presets": [
-          [
-            "@babel/preset-env",
-            {
-              "targets": {
-                "node": "12"
-              },
-              "modules": "commonjs"
-            }
-          ],
-          "@babel/preset-typescript"
-        ],
-        "plugins": [
-          "@babel/proposal-object-rest-spread",
-          "@babel/plugin-proposal-optional-chaining",
-          "@babel/proposal-class-properties",
-          "add-module-exports"
-        ]
-      }
-    }
   }
 }
