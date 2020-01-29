@@ -1,5 +1,11 @@
 # History
 
+## v5.1.0 2020 January 29
+
+-   Fix using getmac under enabled tsconfig config rule `noUnusedLocals` due to unused import NetworkInterfaceInfo
+    -   [Merges #96](https://github.com/bevry/getmac/pull/96) thanks to [Benoit Sepe](https://github.com/Ogdentrod)
+-   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+
 ## v5.0.0 2019 December 18
 
 -   If you are using CommonJS, you must now do `require('getmac').default`
