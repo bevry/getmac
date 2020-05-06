@@ -21,8 +21,10 @@ export default function getMAC(iface?: string): string {
 		}
 		throw new Error(`interface ${iface} had no valid mac addresses`)
 	} else {
-		for (const key of Object.keys(list)) {
-			const parts = list[key]
+		for (const [key, parts] of Object.entries(list)) {
+			// for some reason beyond me, this is needed to satisfy typescript
+			// fix https://github.com/bevry/getmac/issues/100
+			if (!parts) continue
 			for (const part of parts) {
 				if (zeroRegex.test(part.mac) === false) {
 					return part.mac
