@@ -1,5 +1,5 @@
 <!--
-2019 December 18
+2020 March 26
 https://github.com/bevry/base
 -->
 
@@ -97,13 +97,13 @@ To publish your changes as the project owner:
     ```markdown
     ## v6.29.0 2013 April 1
 
-    -   Progress on [issue #474](https://github.com/bevry/docpad/issues/474)
+    -   Progress on [issue #474](https://github.com/docpad/docpad/issues/474)
     -   DocPad will now set permissions based on the process's ability
-        -   Thanks to [Avi Deitcher](https://github.com/deitch), [Stephan Lough](https://github.com/stephanlough) for [issue #165](https://github.com/bevry/docpad/issues/165)
+        -   Thanks to [Avi Deitcher](https://github.com/deitch), [Stephan Lough](https://github.com/stephanlough) for [issue #165](https://github.com/docpad/docpad/issues/165)
     -   Updated dependencies
     ```
 
-1) Commit the changes with the commit title set to something like `v6.29.0. Bugfix. Improvement.` and commit description set to the changelog entry
+1. Commit the changes with the commit title set to something like `v6.29.0. Bugfix. Improvement.` and commit description set to the changelog entry
 
 1. Ensure the project is ready for publishing:
 

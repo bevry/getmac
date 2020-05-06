@@ -141,8 +141,9 @@ These amazing people have contributed code to this project:
 <li><a href="https://github.com/tedshroyer">ted shroyer</a> — <a href="https://github.com/bevry/getmac/commits?author=tedshroyer" title="View the GitHub contributions of ted shroyer on repository bevry/getmac">view contributions</a></li>
 <li><a href="http://caasih.net">Isaac Huang</a> — <a href="https://github.com/bevry/getmac/commits?author=caasi" title="View the GitHub contributions of Isaac Huang on repository bevry/getmac">view contributions</a></li>
 <li><a href="https://github.com/zboszor">zboszor</a> — <a href="https://github.com/bevry/getmac/commits?author=zboszor" title="View the GitHub contributions of zboszor on repository bevry/getmac">view contributions</a></li>
-<li><a href="https://github.com/guhcostan">Gustavo Costa Neves</a> — <a href="https://github.com/bevry/getmac/commits?author=guhcostan" title="View the GitHub contributions of Gustavo Costa Neves on repository bevry/getmac">view contributions</a></li>
+<li><a href="http://guhcostan.site/">Gustavo Costa Neves</a> — <a href="https://github.com/bevry/getmac/commits?author=guhcostan" title="View the GitHub contributions of Gustavo Costa Neves on repository bevry/getmac">view contributions</a></li>
 <li><a href="https://github.com/Ogdentrod">Benoit Sepe</a> — <a href="https://github.com/bevry/getmac/commits?author=Ogdentrod" title="View the GitHub contributions of Benoit Sepe on repository bevry/getmac">view contributions</a></li>
+<li><a href="https://github.com/Hirse">Jan Pilzer</a> — <a href="https://github.com/bevry/getmac/commits?author=Hirse" title="View the GitHub contributions of Jan Pilzer on repository bevry/getmac">view contributions</a></li>
 <li><a href="http://github.com/apps/dependabot-preview">dependabot-preview[bot]</a> — <a href="https://github.com/bevry/getmac/commits?author=dependabot-preview[bot]" title="View the GitHub contributions of dependabot-preview[bot] on repository bevry/getmac">view contributions</a></li></ul>
 
 <a href="https://github.com/bevry/getmac/blob/master/CONTRIBUTING.md#files">Discover how you can contribute by heading on over to the <code>CONTRIBUTING.md</code> file.</a>
