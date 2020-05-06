@@ -1,6 +1,6 @@
 {
   "name": "getmac",
-  "version": "5.1.0",
+  "version": "5.2.0",
   "description": "Get the MAC address of the current machine you are on.",
   "homepage": "https://github.com/bevry/getmac",
   "license": "MIT",

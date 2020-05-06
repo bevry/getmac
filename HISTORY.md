@@ -1,5 +1,14 @@
 # History
 
+## v5.2.0 2020 May 6
+
+-   Fix `Object is possibly 'undefined'` compile error
+    -   Closes [issue #100](https://github.com/bevry/getmac/issues/100) thanks to [DiamondYuan](https://github.com/DiamondYuan) and [marcoburrometo](https://github.com/marcoburrometo)
+-   Removes leftover `coffeescript` and `coffeelint` dev dependencies
+    -   Closes [pull request #98](https://github.com/bevry/getmac/pull/98) thanks to [Jan Pilzer](https://github.com/Hirse)
+-   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+-   Minimum required node version changed from `node: >=8` to `node: >=10` to keep up with mandatory ecosystem changes
+
 ## v5.1.0 2020 January 29
 
 -   Fix using getmac under enabled tsconfig config rule `noUnusedLocals` due to unused import NetworkInterfaceInfo
