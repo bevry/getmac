@@ -1,6 +1,6 @@
 {
   "name": "getmac",
-  "version": "5.7.0",
+  "version": "5.8.0",
   "description": "Get the MAC address of the current machine you are on.",
   "homepage": "https://github.com/bevry/getmac",
   "license": "MIT",
@@ -99,46 +99,47 @@
       "engines": {
         "node": "10 || 12 || 13 || 14"
       }
-    },
-    {
-      "description": "TypeScript source code made to be compatible with Deno",
-      "directory": "edition-deno",
-      "entry": "index.ts",
-      "tags": [
-        "typescript",
-        "import",
-        "deno"
-      ],
-      "engines": {
-        "deno": true,
-        "browsers": false
-      }
     }
   ],
   "types": "./compiled-types/",
   "type": "commonjs",
   "main": "edition-esnext/index.js",
-  "deno": "edition-deno/index.ts",
   "dependencies": {
-    "@types/node": "^14.0.13"
-  },
-  "devDependencies": {
-    "@bevry/update-contributors": "^1.9.0",
-    "@typescript-eslint/eslint-plugin": "^3.2.0",
-    "@typescript-eslint/parser": "^3.2.0",
-    "assert-helpers": "^6.8.0",
-    "eslint": "^7.2.0",
-    "eslint-config-bevry": "^3.9.0",
+    "@types/node": "^14.0.13",
+    "@bevry/update-contributors": "^1.10.0",
+    "@typescript-eslint/eslint-plugin": "^3.3.0",
+    "@typescript-eslint/parser": "^3.3.0",
+    "assert-helpers": "^6.10.0",
+    "eslint": "^7.3.0",
+    "eslint-config-bevry": "^3.10.0",
     "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-prettier": "^3.1.3",
-    "kava": "^5.4.0",
-    "make-deno-edition": "^0.2.2",
+    "eslint-plugin-prettier": "^3.1.4",
+    "kava": "^5.5.0",
+    "make-deno-edition": "^0.8.0",
     "prettier": "^2.0.5",
-    "projectz": "^2.6.0",
+    "projectz": "^2.7.0",
     "surge": "^0.21.3",
     "typedoc": "^0.17.7",
     "typescript": "^3.9.5",
-    "valid-directory": "^2.3.0"
+    "valid-directory": "^2.4.0"
+  },
+  "devDependencies": {
+    "@bevry/update-contributors": "^1.10.0",
+    "@typescript-eslint/eslint-plugin": "^3.3.0",
+    "@typescript-eslint/parser": "^3.3.0",
+    "assert-helpers": "^6.10.0",
+    "eslint": "^7.3.0",
+    "eslint-config-bevry": "^3.10.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "kava": "^5.5.0",
+    "make-deno-edition": "^0.8.0",
+    "prettier": "^2.0.5",
+    "projectz": "^2.7.0",
+    "surge": "^0.21.3",
+    "typedoc": "^0.17.7",
+    "typescript": "^3.9.5",
+    "valid-directory": "^2.4.0"
   },
   "scripts": {
     "our:clean": "rm -Rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
