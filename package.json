@@ -1,6 +1,6 @@
 {
   "name": "getmac",
-  "version": "5.9.0",
+  "version": "5.10.0",
   "description": "Get the MAC address of the current machine you are on.",
   "homepage": "https://github.com/bevry/getmac",
   "license": "MIT",
@@ -105,26 +105,25 @@
   "type": "commonjs",
   "main": "edition-esnext/index.js",
   "dependencies": {
-    "@types/node": "^14.0.13",
-    "editions": "3.5.0"
+    "@types/node": "^14.0.13"
   },
   "devDependencies": {
-    "@bevry/update-contributors": "1.9.0",
+    "@bevry/update-contributors": "^1.9.0",
     "@typescript-eslint/eslint-plugin": "^3.3.0",
     "@typescript-eslint/parser": "^3.3.0",
-    "assert-helpers": "6.8.0",
+    "assert-helpers": "^6.8.0",
     "eslint": "^7.3.0",
-    "eslint-config-bevry": "3.8.0",
+    "eslint-config-bevry": "^3.8.0",
     "eslint-config-prettier": "^6.7.0",
     "eslint-plugin-prettier": "^3.1.4",
-    "kava": "5.4.0",
-    "make-deno-edition": "0.9.1",
+    "kava": "^5.7.0",
+    "make-deno-edition": "^0.9.1",
     "prettier": "^2.0.5",
-    "projectz": "2.5.0",
+    "projectz": "^2.9.0",
     "surge": "^0.21.3",
     "typedoc": "^0.17.7",
     "typescript": "^3.9.5",
-    "valid-directory": "2.2.0"
+    "valid-directory": "^2.5.0"
   },
   "scripts": {
     "our:clean": "rm -Rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
