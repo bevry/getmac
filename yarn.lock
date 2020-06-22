@@ -1638,9 +1638,9 @@ progress@^2.0.0, progress@^2.0.3:
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
 projectz@^2.9.0:
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/projectz/-/projectz-2.9.0.tgz#f44aaa82bc0946dc4bf2a2510c38b5f8c1729d27"
-  integrity sha512-xL7/PRM2hj3cdiiiawg+0OP/oQf909E9tKhyJnf30StmT1EExEDrRhrKWzZpP8UAjlJ1NPMQmcya6R/31u/HgA==
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/projectz/-/projectz-2.10.0.tgz#671ae853ea47a553645d1457337c8a84fe4519ba"
+  integrity sha512-w76YgvY8ezEeW+GpQJE79SFvQWJXuAUlcipUQVV8V2TPNOcjis2W3MI/4pMQyV14vgqEKDd6BwSobjrPAVSNMQ==
   dependencies:
     badges "^4.9.0"
     caterpillar "^5.6.0"
