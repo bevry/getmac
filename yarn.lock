@@ -592,6 +592,11 @@ enquirer@^2.3.5:
   dependencies:
     ansi-colors "^3.2.1"
 
+errlop@3.10.0, errlop@^3.5.0, errlop@^3.9.0:
+  version "3.10.0"
+  resolved "https://registry.yarnpkg.com/errlop/-/errlop-3.10.0.tgz#3ace18010827279e0460542c26cdff8c773f941d"
+  integrity sha512-BOIPDVJPdwXhHFg7UgubXRXjykKPVlc+nCAz/2QWqqS+DyS4nDExc8S53Pv91U5D5WbKQNcdJ65SfViVjZBSJg==
+
 errlop@3.9.0:
   version "3.9.0"
   resolved "https://registry.yarnpkg.com/errlop/-/errlop-3.9.0.tgz#a4981bd694496d42d667d317b9d4a9e9d232023c"
@@ -601,11 +606,6 @@ errlop@^2.0.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/errlop/-/errlop-2.2.0.tgz#1ff383f8f917ae328bebb802d6ca69666a42d21b"
   integrity sha512-e64Qj9+4aZzjzzFpZC7p5kmm/ccCrbLhAJplhsDXQFs87XTsXwOpH4s1Io2s90Tau/8r2j9f4l/thhDevRjzxw==
-
-errlop@^3.5.0, errlop@^3.9.0:
-  version "3.10.0"
-  resolved "https://registry.yarnpkg.com/errlop/-/errlop-3.10.0.tgz#3ace18010827279e0460542c26cdff8c773f941d"
-  integrity sha512-BOIPDVJPdwXhHFg7UgubXRXjykKPVlc+nCAz/2QWqqS+DyS4nDExc8S53Pv91U5D5WbKQNcdJ65SfViVjZBSJg==
 
 es-abstract@^1.17.0-next.1, es-abstract@^1.17.4, es-abstract@^1.17.5:
   version "1.17.6"
@@ -956,7 +956,7 @@ get-cli-arg@^5.8.0:
   dependencies:
     normalify "2.11.0"
 
-get-cli-arg@^6.0.0:
+get-cli-arg@^6.1.0:
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/get-cli-arg/-/get-cli-arg-6.1.0.tgz#f28b0e4277b11c11f0c4c3f957b4e3374344831d"
   integrity sha512-7x8V0CplBLka6zLBZMpnqpMw4IfRhbiUPIvwGwo6WKwocVeZnVnnH3UCvQhcdFlyomISpWgxKYcPzm9S4TJIdw==
@@ -1379,17 +1379,17 @@ lunr@^2.3.8:
   resolved "https://registry.yarnpkg.com/lunr/-/lunr-2.3.8.tgz#a8b89c31f30b5a044b97d2d28e2da191b6ba2072"
   integrity sha512-oxMeX/Y35PNFuZoHp+jUj5OSEmLCaIH4KTFJh7a93cHBoFmpw2IoPs22VIz7vyO2YUnx2Tn9dzIwO2P/4quIRg==
 
-make-deno-edition@^0.13.0:
-  version "0.13.0"
-  resolved "https://registry.yarnpkg.com/make-deno-edition/-/make-deno-edition-0.13.0.tgz#8f49d5e5715bc371628c758d69e3f3f80eaa694f"
-  integrity sha512-I0WiX+TrUAd9eYFvlawlggj8BlbjtkbcevgS5XSm3+6plgL8bJiHLFau+ebZTOfRDY5nJgzTEYFUo99URWrC1g==
+make-deno-edition@^0.14.0:
+  version "0.14.0"
+  resolved "https://registry.yarnpkg.com/make-deno-edition/-/make-deno-edition-0.14.0.tgz#b972cb1beaf32a41ff17b0b4e5884d2fb63be9fc"
+  integrity sha512-JYefOIc78Pqv2uMNNUdId/9vJUPEglwya/8YOs3JxAwIud3aDlVwcwtqqbZVTiwv6K+hLHwx/jxedZN4itU/8g==
   dependencies:
     "@types/rimraf" "^3.0.0"
     await-spawn "^3.0.0"
     chalk "^4.1.0"
-    errlop "3.9.0"
+    errlop "3.10.0"
     fdir "^3.4.3"
-    get-cli-arg "^6.0.0"
+    get-cli-arg "^6.1.0"
     mkdirp "^1.0.4"
     rimraf "^3.0.2"
 
