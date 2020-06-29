@@ -146,7 +146,7 @@ ajv@^6.10.0, ajv@^6.10.2, ajv@^6.5.5:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
-ambi@3, ambi@3.2.0:
+ambi@3:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/ambi/-/ambi-3.2.0.tgz#13b45fcf6845465f652137f80176322e911b70d6"
   integrity sha512-nj5sHLPFd7u2OLmHdFs4DHt3gK6edpNw35hTRIKyI/Vd2Th5e4io50rw1lhmCdUNO2Mm4/4FkHmv6shEANAWcw==
@@ -556,14 +556,6 @@ ecc-jsbn@~0.1.1:
     jsbn "~0.1.0"
     safer-buffer "^2.1.0"
 
-editions@3.5.0:
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/editions/-/editions-3.5.0.tgz#11c37f789a5c28fcfcf513a1cc49e7e2c0d31d81"
-  integrity sha512-iSTtszoco9ln3m3NdCUXOVBrOTArjWww76RK2o1PK/kCZTKCHH8GtvXYYi2h0/71bbFZncUVGFW54WClijGdVg==
-  dependencies:
-    errlop "^3.5.0"
-    semver "6.3.0"
-
 editions@^2.1.0, editions@^2.2.0:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/editions/-/editions-2.3.1.tgz#3bc9962f1978e801312fbd0aebfed63b49bfe698"
@@ -602,7 +594,7 @@ errlop@^2.0.0:
   resolved "https://registry.yarnpkg.com/errlop/-/errlop-2.2.0.tgz#1ff383f8f917ae328bebb802d6ca69666a42d21b"
   integrity sha512-e64Qj9+4aZzjzzFpZC7p5kmm/ccCrbLhAJplhsDXQFs87XTsXwOpH4s1Io2s90Tau/8r2j9f4l/thhDevRjzxw==
 
-errlop@^3.5.0, errlop@^3.9.0:
+errlop@^3.9.0:
   version "3.10.0"
   resolved "https://registry.yarnpkg.com/errlop/-/errlop-3.10.0.tgz#3ace18010827279e0460542c26cdff8c773f941d"
   integrity sha512-BOIPDVJPdwXhHFg7UgubXRXjykKPVlc+nCAz/2QWqqS+DyS4nDExc8S53Pv91U5D5WbKQNcdJ65SfViVjZBSJg==
@@ -777,13 +769,13 @@ esutils@^2.0.2:
   resolved "https://registry.yarnpkg.com/esutils/-/esutils-2.0.3.tgz#74d2eb4de0b8da1293711910d50775b9b710ef64"
   integrity sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==
 
-event-emitter-grouped@4.5.0:
-  version "4.5.0"
-  resolved "https://registry.yarnpkg.com/event-emitter-grouped/-/event-emitter-grouped-4.5.0.tgz#d969eb9eceddb786cf1220c830a84d683557d91f"
-  integrity sha512-6dUuJXk/wGZN2sJM1gFuv4jF/hHS0LNWo+OI0wV9oXZVofWPVqvqqZwo+IdKsF/U1NnvlE8axbK0jyzeuP48TQ==
+event-emitter-grouped@4.10.0:
+  version "4.10.0"
+  resolved "https://registry.yarnpkg.com/event-emitter-grouped/-/event-emitter-grouped-4.10.0.tgz#6ad3b3f75344e991cf6ea35ab57045f944faf824"
+  integrity sha512-A8on9Zgz9F5JfThd41w+Qh3FnVg7Th9ALucDENH+b/83s1hdI4Asds7/zzgIdxkFrBbYuhbUmKKL89QRjboZ4w==
   dependencies:
-    taskgroup "^7.6.0"
-    unbounded "^3.3.0"
+    taskgroup "7.11.0"
+    unbounded "3.7.0"
 
 extend@~3.0.2:
   version "3.0.2"
@@ -797,7 +789,7 @@ extendr@5.9.0:
   dependencies:
     typechecker "7.5.0"
 
-extendr@^5.5.0, extendr@^5.7.0:
+extendr@^5.7.0:
   version "5.10.0"
   resolved "https://registry.yarnpkg.com/extendr/-/extendr-5.10.0.tgz#0c3afd261220eace50ec66394ce0f643073134ed"
   integrity sha512-F1rkARf8rc5nuzljYD6lBE5O1kzTFkb5p6ir+mC1S0cRqiKG6AYgcKQEHmqAqA9EDDFJdnmW+S36R4J+XNl8pA==
@@ -1353,13 +1345,12 @@ jsprim@^1.2.2:
     verror "1.10.0"
 
 kava@^5.7.0:
-  version "5.7.0"
-  resolved "https://registry.yarnpkg.com/kava/-/kava-5.7.0.tgz#91591ce7a0beebbaae82a5c04812725aa32583bc"
-  integrity sha512-gso9hwp+BbOeW6JuM5pw2IvxoEqnJxhKe13cMTP0RdgMDUNHpjq3jXPUM8IIdY8d56IUI8Kky7MZVAN8O9RJyA==
+  version "5.8.0"
+  resolved "https://registry.yarnpkg.com/kava/-/kava-5.8.0.tgz#4d0ec055d90cbd9722c102176fbac6c2374bb6d4"
+  integrity sha512-Go5GqL7ywnJOuZuwjm/elpMVMayTT0qKLQkqGLOpRb3cf1axcaYEeEQg4dsbb6MCNKmkqMa5DTMRbDaBri6wwA==
   dependencies:
-    editions "3.5.0"
-    event-emitter-grouped "4.5.0"
-    taskgroup "7.7.0"
+    event-emitter-grouped "4.10.0"
+    taskgroup "7.11.0"
 
 levn@^0.4.1:
   version "0.4.1"
@@ -1827,7 +1818,7 @@ safe-buffer@^5.0.1, safe-buffer@^5.1.2, safe-buffer@~5.2.0:
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
-semver@6, semver@6.3.0, semver@^6.3.0:
+semver@6, semver@^6.3.0:
   version "6.3.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-6.3.0.tgz#ee0a64c8af5e8ceea67687b133761e1becbd1d3d"
   integrity sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==
@@ -2079,17 +2070,7 @@ tarr@1.1.0:
     fstream ">=1.0.12"
     inherits "2"
 
-taskgroup@7.7.0:
-  version "7.7.0"
-  resolved "https://registry.yarnpkg.com/taskgroup/-/taskgroup-7.7.0.tgz#fa423916813676023e5acfdd652756375cccd59e"
-  integrity sha512-AzGP6+0Ur90btsHsgAjqUFZU0mswtswxgUph0dBW2BVwW0LjYJ4XI6VgS/UimaqpXR/XBR15kheVE9RKGTJAUw==
-  dependencies:
-    ambi "3.2.0"
-    eachr "^4.5.0"
-    extendr "^5.5.0"
-    unbounded "^3.3.0"
-
-taskgroup@^7.6.0:
+taskgroup@7.11.0:
   version "7.11.0"
   resolved "https://registry.yarnpkg.com/taskgroup/-/taskgroup-7.11.0.tgz#6976cb73a19b3cac81fe92cbb42cdf38cb620420"
   integrity sha512-/tMWVFIjHdVbuAMxlrAbG4B++r3B02pxgRKm+x9Z9W/ycBGXzkakh+vbaUw2dO6YJO6zxOEdSK0AjEwHdQqiVA==
@@ -2225,7 +2206,7 @@ unbounded@3.4.0:
   resolved "https://registry.yarnpkg.com/unbounded/-/unbounded-3.4.0.tgz#0e44520a5c3e5759fbf15ef32ead744046cd20a4"
   integrity sha512-d9LOcaNowWY9zEynpOzRCd7lpABqVD7svxkUBzZ6Va5QixAL0l3VjIXHwXli00ovHj19ABBcI9VeZYOke/hTsQ==
 
-unbounded@^3.3.0:
+unbounded@3.7.0:
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/unbounded/-/unbounded-3.7.0.tgz#c1f8c97b5d173e7e7a1ff0349da00269c6fd9662"
   integrity sha512-gqIxGgyzb1krnJHGk2BkGUlDTDJRvogqi05hsWKyie0m67Hihqe3yYmeEnnPnQKI8tC4b3NR9/JjF3fWR4G/Kw==
