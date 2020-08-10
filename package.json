@@ -140,7 +140,7 @@
     "prettier": "^2.0.5",
     "projectz": "^2.12.0",
     "surge": "^0.21.6",
-    "typedoc": "^0.17.8",
+    "typedoc": "^0.18.0",
     "typescript": "^3.9.7",
     "valid-directory": "^2.7.0"
   },
