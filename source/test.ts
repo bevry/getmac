@@ -1,7 +1,7 @@
 // Import
 import kava from 'kava'
 import { equal } from 'assert-helpers'
-import getMAC, { isMAC } from './'
+import getMAC, { isMAC } from './index.js'
 
 // Test
 kava.suite('getMAC', function (suite, test) {
