@@ -1,6 +1,6 @@
 {
   "name": "getmac",
-  "version": "5.18.0",
+  "version": "5.19.0",
   "description": "Get the MAC address of the current machine you are on.",
   "homepage": "https://github.com/bevry/getmac",
   "license": "MIT",
@@ -94,7 +94,7 @@
       "engines": false
     },
     {
-      "description": "TypeScript compiled against ES2019 for Node.js 10 || 12 || 14 with Require for modules",
+      "description": "TypeScript compiled against ES2019 for Node.js 10 || 12 || 14 || 16 with Require for modules",
       "directory": "edition-es2019",
       "entry": "index.js",
       "tags": [
@@ -104,12 +104,12 @@
         "require"
       ],
       "engines": {
-        "node": "10 || 12 || 14",
+        "node": "10 || 12 || 14 || 16",
         "browsers": false
       }
     },
     {
-      "description": "TypeScript compiled against ES2019 for Node.js 12 || 14 with Import for modules",
+      "description": "TypeScript compiled against ES2019 for Node.js 12 || 14 || 16 with Import for modules",
       "directory": "edition-es2019-esm",
       "entry": "index.js",
       "tags": [
@@ -119,7 +119,7 @@
         "import"
       ],
       "engines": {
-        "node": "12 || 14",
+        "node": "12 || 14 || 16",
         "browsers": false
       }
     },
@@ -149,18 +149,18 @@
   },
   "deno": "edition-deno/index.ts",
   "dependencies": {
-    "@types/node": "^16.4.3"
+    "@types/node": "^16.4.6"
   },
   "devDependencies": {
-    "@bevry/update-contributors": "^1.18.0",
+    "@bevry/update-contributors": "^1.19.0",
     "@typescript-eslint/eslint-plugin": "^4.28.5",
     "@typescript-eslint/parser": "^4.28.5",
     "assert-helpers": "^8.2.0",
     "eslint": "^7.31.0",
-    "eslint-config-bevry": "^3.23.0",
+    "eslint-config-bevry": "^3.25.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
-    "kava": "^5.13.0",
+    "kava": "^5.14.0",
     "make-deno-edition": "^1.3.0",
     "prettier": "^2.3.2",
     "projectz": "^2.18.0",
