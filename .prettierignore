@@ -1,4 +1,4 @@
-# 2023 March 24
+# 2023 November 13
 # https://github.com/bevry/base
 
 # VCS Files
@@ -31,6 +31,8 @@ bower_components/
 node_modules/
 
 # Build Outputs
+**/*.cjs
+**/*.mjs
 **/out.*
 **/*.out.*
 **/out/

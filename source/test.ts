@@ -35,12 +35,12 @@ kava.suite('getMAC', function (suite, test) {
 		equal(
 			macAddress === '00-00-00-00-00-00',
 			false,
-			`${macAddress} not 00-00-00-00-00-00`,
+			`${macAddress} not 00-00-00-00-00-00`
 		)
 		equal(
 			macAddress === '00:00:00:00:00:00',
 			false,
-			`${macAddress} not 00:00:00:00:00:00`,
+			`${macAddress} not 00:00:00:00:00:00`
 		)
 		equal(typeof macAddress, 'string', `${macAddress} is string`)
 		equal(isMAC(macAddress), true, `${macAddress} is mac address`)
