@@ -1,6 +1,6 @@
 {
   "name": "getmac",
-  "version": "6.1.0",
+  "version": "6.2.0",
   "description": "Get the MAC address of the current machine you are on.",
   "homepage": "https://github.com/bevry/getmac",
   "license": "Artistic-2.0",
@@ -26,18 +26,19 @@
       "githubsponsors",
       "thanksdev",
       "patreon",
-      "flattr",
       "liberapay",
       "buymeacoffee",
       "opencollective",
       "crypto",
       "paypal",
-      "wishlist"
+      "---",
+      "discord",
+      "twitch"
     ],
     "config": {
       "githubWorkflow": "bevry",
       "githubSponsorsUsername": "balupton",
-      "thanksdevGithubUsername": "balupton",
+      "thanksdevGithubUsername": "bevry",
       "buymeacoffeeUsername": "balupton",
       "cryptoURL": "https://bevry.me/crypto",
       "flattrUsername": "balupton",
@@ -46,6 +47,9 @@
       "patreonUsername": "bevry",
       "paypalURL": "https://bevry.me/paypal",
       "wishlistURL": "https://bevry.me/wishlist",
+      "discordServerID": "1147436445783560193",
+      "discordServerInvite": "nQuXddV7VP",
+      "twitchUsername": "balupton",
       "githubUsername": "bevry",
       "githubRepository": "getmac",
       "githubSlug": "bevry/getmac",
@@ -118,41 +122,53 @@
         "node": "12 || 14 || 16 || 18 || 20 || 21",
         "browsers": false
       }
+    },
+    {
+      "description": "TypeScript compiled Types with Import for modules",
+      "directory": "edition-types",
+      "entry": "index.d.ts",
+      "tags": [
+        "compiled",
+        "types",
+        "import"
+      ],
+      "engines": false
     }
   ],
-  "types": "./compiled-types/",
+  "types": "edition-types/index.d.ts",
   "type": "module",
   "main": "edition-es2022/index.js",
   "exports": {
     "node": {
+      "types": "./edition-types/index.d.ts",
       "import": "./edition-es2022-esm/index.js",
       "require": "./edition-es2022/index.js"
     }
   },
   "devDependencies": {
     "@bevry/update-contributors": "^1.23.0",
-    "@types/node": "^20.9.0",
-    "@typescript-eslint/eslint-plugin": "^6.11.0",
-    "@typescript-eslint/parser": "^6.11.0",
-    "assert-helpers": "^11.4.0",
-    "eslint": "^8.53.0",
-    "eslint-config-bevry": "^4.0.0",
+    "@types/node": "^20.9.3",
+    "@typescript-eslint/eslint-plugin": "^6.12.0",
+    "@typescript-eslint/parser": "^6.12.0",
+    "assert-helpers": "^11.5.0",
+    "eslint": "^8.54.0",
+    "eslint-config-bevry": "^5.0.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.1",
-    "kava": "^7.2.0",
+    "kava": "^7.3.0",
     "prettier": "^3.1.0",
-    "projectz": "^3.0.0",
+    "projectz": "^3.2.0",
     "surge": "^0.23.1",
     "typedoc": "^0.25.3",
     "typescript": "5.2.2",
-    "valid-directory": "^4.2.0"
+    "valid-directory": "^4.4.0"
   },
   "scripts": {
     "our:clean": "rm -rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
-    "our:compile": "npm run our:compile:edition-es2022 && npm run our:compile:edition-es2022-esm && npm run our:compile:types",
+    "our:compile": "npm run our:compile:edition-es2022 && npm run our:compile:edition-es2022-esm && npm run our:compile:edition-types",
     "our:compile:edition-es2022": "tsc --module commonjs --target ES2022 --outDir ./edition-es2022 --project tsconfig.json && ( test ! -d edition-es2022/source || ( mv edition-es2022/source edition-temp && rm -rf edition-es2022 && mv edition-temp edition-es2022 ) ) && printf '%s' '{\"type\": \"commonjs\"}' > edition-es2022/package.json",
     "our:compile:edition-es2022-esm": "tsc --module ESNext --target ES2022 --outDir ./edition-es2022-esm --project tsconfig.json && ( test ! -d edition-es2022-esm/source || ( mv edition-es2022-esm/source edition-temp && rm -rf edition-es2022-esm && mv edition-temp edition-es2022-esm ) ) && printf '%s' '{\"type\": \"module\"}' > edition-es2022-esm/package.json",
-    "our:compile:types": "tsc --project tsconfig.json --emitDeclarationOnly --declaration --declarationMap --declarationDir ./compiled-types && ( test ! -d compiled-types/source || ( mv compiled-types/source edition-temp && rm -rf compiled-types && mv edition-temp compiled-types ) )",
+    "our:compile:edition-types": "tsc --emitDeclarationOnly --declaration --declarationMap --declarationDir ./edition-types --project tsconfig.json && ( test ! -d edition-types/source || ( mv edition-types/source edition-temp && rm -rf edition-types && mv edition-temp edition-types ) )",
     "our:deploy": "printf '%s\n' 'no need for this project'",
     "our:meta": "npm run our:meta:contributors && npm run our:meta:docs && npm run our:meta:projectz",
     "our:meta:contributors": "update-contributors",
