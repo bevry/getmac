@@ -3,10 +3,26 @@ import kava from 'kava'
 import { equal } from 'assert-helpers'
 import getMAC, { isMAC } from './index.js'
 
+function mockNetworkInterfaces(mac: string) {
+	const os = require('os')
+	const actual = os.networkInterfaces
+	os.networkInterfaces = function () {
+		return {
+			en0: [
+				{
+					mac,
+				},
+			],
+		}
+	}
+	const restore = () => (os.networkInterfaces = actual)
+	return restore
+}
+
 // Test
 kava.suite('getMAC', function (suite, test) {
 	suite('validation', function (suite, test) {
-		test('validates dashed mac correctly', function () {
+		test('validates coloned mac correctly', function () {
 			equal(isMAC('e4:ce:8f:5b:a7:fe'), true)
 		})
 
@@ -14,7 +30,7 @@ kava.suite('getMAC', function (suite, test) {
 			equal(isMAC('00:28:31:8A:41:C6'), true)
 		})
 
-		test('validates coloned mac correctly', function () {
+		test('validates dashed mac correctly', function () {
 			equal(isMAC('e4-ce-8f-5b-a7-fe'), true)
 		})
 
@@ -44,5 +60,13 @@ kava.suite('getMAC', function (suite, test) {
 		)
 		equal(typeof macAddress, 'string', `${macAddress} is string`)
 		equal(isMAC(macAddress), true, `${macAddress} is mac address`)
+	})
+
+	test('returns mac', function () {
+		const mockedMacAddress = '01-23-45-67-89-AB-CD-EF'
+		const restore = mockNetworkInterfaces(mockedMacAddress)
+		const macAddress = getMAC()
+		equal(macAddress, mockedMacAddress)
+		restore()
 	})
 })
